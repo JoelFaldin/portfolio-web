@@ -143,16 +143,8 @@ body {
     text-align: center;
 }
 
-.project-list-li img {
-    transition: opacity 0.5s;
-}
-
 .project-list-li:hover span {
     color: #ff8000;
-}
-
-.project-list-li:hover img {
-    opacity: 0.3;
 }
 
 /* Styling the contact section: */
@@ -199,4 +191,30 @@ body {
 
 .contact-list li:hover p {
     color: #ff8000;
+}
+
+@media only screen and (max-width: 1080px) {
+    .projects {
+        height: 150vh;
+    }
+    
+    .project-list li {
+        float: none;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .home  {
+        flex-direction: column;
+        height: 140vh;
+    }
+    #image {
+        margin-bottom: 60px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    #navbar-li a {
+        padding: 0 15px 0 15px;
+    }   
 }
