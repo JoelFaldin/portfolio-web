@@ -106,7 +106,8 @@ body {
 /* Styling the projects section: */
 .projects {
     height: 100vh;
-    background: linear-gradient(to top right, #595959, #404040);
+    background: linear-gradient(to top right, #005266, #002933);
+    /* background: linear-gradient(to top right, #595959, #404040); */
     padding-top: 80px;
     border-top: 2px solid #808080;
     display: flex;
