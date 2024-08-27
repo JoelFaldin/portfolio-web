@@ -1,0 +1,32 @@
+---
+import Badge from "../components/Badge.astro";
+import Github from "../components/logos/Github.astro";
+import Linkedin from "../components/logos/Linkedin.astro";
+import Links from "../components/Links.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Web developer and Programmer" desc="Meet Joel Faldín, an Informatics student focused on web development.">
+	<main>
+		<section class="w-full md:w-[740px] mx-auto py-40">
+			<h1 class="text-white text-5xl font-bold pb-2">
+				Hello there, I'm <span class="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Joel Faldín</span>!
+			</h1>
+			<a href="https://www.linkedin.com/in/joel-faldín/" target="_blank" rel="noopener noreferrer">
+				<Badge>Open to work</Badge>
+			</a>
+			<h2 class="text-xl opacity-90 pt-7 pb-5 text-wrap">University student, web developer from <span class="bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent font-bold">Chile</span> 🇨🇱. Focused on creating web applications.</h2>
+
+			<nav class="flex gap-x-4">
+				<Links href="https://github.com/JoelFaldin">
+					<Github class="size-6" />
+					Github
+				</Links>
+				<Links href="https://www.linkedin.com/in/joel-faldín/">
+					<Linkedin class="size-6" />
+					LinkedIn
+				</Links>
+			</nav>
+		</section>
+	</main>
+</Layout>
