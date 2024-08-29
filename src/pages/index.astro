@@ -5,11 +5,14 @@ import Linkedin from "../components/logos/Linkedin.astro";
 import Links from "../components/Links.astro";
 import Layout from "../layouts/Layout.astro";
 import ExpItem from "../components/ExpItem.astro";
+import Section from "../components/Section.astro";
+import Plane from "../components/logos/Plane.astro";
 ---
 
 <Layout title="Web developer and Programmer" desc="Meet Joel Faldín, an Informatics student focused on web development.">
 	<main>
-		<section class="w-full md:w-[740px] mx-auto pt-40 pb-20">
+		<Section class="pt-40 pb-20">
+
 			<h1 class="text-white text-5xl font-bold pb-2">
 				Hello there, I'm <span class="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Joel Faldín</span>!
 			</h1>
@@ -17,7 +20,7 @@ import ExpItem from "../components/ExpItem.astro";
 				<Badge>Open to work</Badge>
 			</a>
 			<h2 class="text-xl opacity-90 pt-7 pb-5 text-wrap">University student, web developer from <span class="bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent font-bold">Chile</span> 🇨🇱. Focused on creating web applications.</h2>
-
+			
 			<nav class="flex gap-x-4">
 				<Links href="https://github.com/JoelFaldin">
 					<Github class="size-6" />
@@ -28,10 +31,13 @@ import ExpItem from "../components/ExpItem.astro";
 					LinkedIn
 				</Links>
 			</nav>
-		</section>
+		</Section>
 
-		<section class="w-full md:w-[740px] mx-auto">
-			<h1 class="text-white text-3xl font-bold pb-5">Experience</h1>
+		<Section>
+			<h1 class="text-white text-3xl font-bold pb-5 flex gap-x-4 items-center">
+				<Plane class="size-12" />
+				Experience
+			</h1>
 
 			<div class="flex flex-col gap-y-5">
 				<ExpItem expTitle="Freelance" date="march 2024 - today" place="Independent">
@@ -48,7 +54,6 @@ import ExpItem from "../components/ExpItem.astro";
 					</span>
 				</ExpItem>
 			</div>
-
-		</section>
+		</Section>
 	</main>
 </Layout>
