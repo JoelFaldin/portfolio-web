@@ -7,6 +7,9 @@ import Layout from "../layouts/Layout.astro";
 import ExpItem from "../components/ExpItem.astro";
 import Section from "../components/Section.astro";
 import Plane from "../components/logos/Plane.astro";
+import Tools from "../components/logos/Tools.astro";
+import Project from "../components/Project.astro";
+import logos from "../logos"
 ---
 
 <Layout title="Web developer and Programmer" desc="Meet Joel Faldín, an Informatics student focused on web development.">
@@ -21,7 +24,7 @@ import Plane from "../components/logos/Plane.astro";
 			</a>
 			<h2 class="text-xl md:text-2xl opacity-90 pt-7 pb-5 text-wrap max-w-[700px]">University student, web developer from <span class="bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent font-bold">Chile</span> 🇨🇱. Focused on creating web applications.</h2>
 			
-			<nav class="flex  gap-x-4 text-wrap">
+			<nav class="flex gap-x-4 text-wrap">
 				<Links href="https://github.com/JoelFaldin">
 					<Github class="size-4 md:size-6" />
 					Github
@@ -33,9 +36,9 @@ import Plane from "../components/logos/Plane.astro";
 			</nav>
 		</Section>
 
-		<Section>
+		<Section class="py-10">
 			<h1 class="text-white text-3xl font-bold pb-5 flex gap-x-4 items-center">
-				<Plane class="size-12" />
+				<Plane class="size-8" />
 				Experience
 			</h1>
 
@@ -43,7 +46,7 @@ import Plane from "../components/logos/Plane.astro";
 				<ExpItem expTitle="Freelance" date="march 2024 - today" place="Independent">
 					<span class="flex flex-col gap-y-2">
 						<p>Worked alongside a team of <span class="text-cyan-500">incredible people</span>, developing a web application for a real client as a part of the requirements for a university subject.</p>
-						<p>Mainly worked on the <span class="text-cyan-500 text-bold">backend</span> side, where a RESTful api was built using express and MySQL.</p>
+						<p>Mainly worked on the <span class="text-cyan-500">backend</span> side, where a RESTful api was built using express and MySQL.</p>
 						<p>For the frontend, we used React with Vite, Typescript and TailwindCSS.</p>
 					</span>
 				</ExpItem>
@@ -54,6 +57,31 @@ import Plane from "../components/logos/Plane.astro";
 					</span>
 				</ExpItem>
 			</div>
+		</Section>
+
+		<Section class="py-10">
+			<h1 class="text-white text-3xl font-bold pb-5 flex gap-x-4 items-center">
+				<Tools class="size-8" />
+				My projects
+			</h1>
+			
+			<Project
+				title="BlackSharkWeb"
+				description="Web project for a graphic designer, developed by a team i'm part of. Showcasing service listing, a gallery and a login system with database integraion."
+				link="https://blacksharkstudiosweb.web.app"
+				repo="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID"
+				techs={[logos.REACT, logos.TAILWIND, logos.VITE, logos.EXPRESS, logos.MYSQL]}
+			>
+				<img class="border border-slate-600 rounded shadow-2xl shadow-white/10 h-60 w-auto" src="/images/bsw_screenshot.png" alt="Image example of the BlackSharkWeb project">
+			</Project>
+			<Project
+				title="React User Administration"
+				description="Web project for an internship. Showcasing a user data table, login system and database."
+				repo="https://github.com/JoelFaldin/React-User-Administration-Frontend"
+				techs={[logos.REACT, logos.TAILWIND, logos.VITE, logos.EXPRESS, logos.MONGO]}
+			>
+				<img class="border border-slate-600 rounded shadow-2xl shadow-white/10 h-60 w-auto" src="/images/user_admin_screenshot.png" alt="Admin view of the React User Administration project." />
+			</Project>
 		</Section>
 	</main>
 </Layout>

@@ -1,0 +1,60 @@
+---
+import Button from './Button.astro'
+import Globe from './Globe.astro'
+import Github from './logos/Github.astro'
+
+interface Tech {
+  name: string,
+  icon: any
+}
+
+interface Props {
+  title: string,
+  description: string,
+  link?: string,
+  repo: string,
+  techs: Array<Tech>
+}
+
+const { title, description, link, repo, techs } = Astro.props
+---
+
+<article class="flex flex-col md:flex-row gap-x-8">
+  <section class="w-full md:w-2/4 mb-8 min-w-fit">
+    <slot />
+  </section>
+  <section class="w-full md:w-2/4 gap-y-6">
+    <h3 class="text-2xl font-bold">{title}</h3>
+
+    <ul class="flex gap-x-4 flex-row mt-2 mb-2">
+      {
+        techs.map(logo => (
+          <li>
+          <span>
+            <logo.icon class="size-8" />
+          </span>
+        </li>
+        ))
+      }
+    </ul>
+
+    <p class="text-sm text-slate-400 mt-4 mb-4">{description}</p>
+
+    <span class="flex gap-x-6">
+      <Button href={repo}>
+        <Github class="size-4 md:size-6" />
+        Code
+      </Button>
+      {
+        link ? (
+          <Button href={link}>
+            <Globe class="size-4 md:size-6" />
+            Demo
+          </Button>
+        ) : (
+          <></>
+        )
+      }
+    </span>
+  </section>
+</article>
