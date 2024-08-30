@@ -41,13 +41,13 @@ const { title, description, link, repo, techs } = Astro.props
     <p class="text-sm text-slate-400 mt-4 mb-4">{description}</p>
 
     <span class="flex gap-x-6">
-      <Button href={repo}>
+      <Button href={repo} target="_blank">
         <Github class="size-4 md:size-6" />
         Code
       </Button>
       {
         link ? (
-          <Button href={link}>
+          <Button href={link} target="_blank">
             <Globe class="size-4 md:size-6" />
             Demo
           </Button>
