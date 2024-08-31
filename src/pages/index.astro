@@ -62,24 +62,28 @@ import Email from "@/components/logos/Email.astro";
 				<Tools class="size-10" />
 				My projects
 			</h1>
-			
-			<Project
-				title="BlackSharkWeb"
-				description="Web project for a graphic designer, developed by a team i'm part of. Showcasing service listing, a gallery and a login system with database integraion."
-				link="https://blacksharkstudiosweb.web.app"
-				repo="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID"
-				techs={[logos.REACT, logos.TAILWIND, logos.VITE, logos.EXPRESS, logos.MYSQL]}
-			>
-				<img class="border border-slate-600 rounded shadow-2xl shadow-white/10 h-60 w-auto mb-2" src="/Portfolio-web/images/bsw_screenshot.png" alt="Image example of the BlackSharkWeb project">
-			</Project>
-			<Project
-				title="React User Administration"
-				description="Web project for an internship. Showcasing a user data table, login system and MongoDB database."
-				repo="https://github.com/JoelFaldin/React-User-Administration-Frontend"
-				techs={[logos.REACT, logos.TAILWIND, logos.VITE, logos.EXPRESS, logos.MONGO]}
-			>
-				<img class="border border-slate-600 rounded shadow-2xl shadow-white/10 h-60 w-auto mb-2" src="/Portfolio-web/images/user_admin_screenshot.png" alt="Admin view of the React User Administration project." />
-			</Project>
+
+			<section class="flex flex-col md:flex-row gap-x-4 gap-y-6">
+				<Project
+					title="BlackSharkWeb"
+					description="E-commerce-like web application showcasing different services offered by a graphic designer!"
+					link="https://blacksharkstudiosweb.web.app"
+					repo="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID"
+					techs={[logos.REACT, logos.TAILWIND, logos.VITE, logos.EXPRESS, logos.MYSQL]}
+					ref="/projects/bsw"
+				>
+					<img class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto md:h-48 md:min-w-fit" src="/portfolio-web/images/bsw_screenshot.png" alt="Image example of the BlackSharkWeb project">
+				</Project>
+				<Project
+					title="User Administration Table"
+					description="Web application displaying user data in a table, with different types of actions you can do!"
+					repo="https://github.com/JoelFaldin/React-User-Administration-Frontend"
+					techs={[logos.REACT, logos.TAILWIND, logos.VITE, logos.EXPRESS, logos.MONGO]}
+					ref="/projects/user-table"
+				>
+					<img class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto md:h-48 md:min-w-fit" src="/portfolio-web/images/user_admin_screenshot.png" alt="Admin view of the React User Administration project." />
+				</Project>
+			</section>
 		</Section>
 	</main>
 </Layout>

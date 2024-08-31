@@ -13,47 +13,53 @@ interface Props {
   description: string,
   link?: string,
   repo: string,
-  techs: Array<Tech>
+  techs: Array<Tech>,
+  ref: string
 }
 
-const { title, description, link, repo, techs } = Astro.props
+const { title, description, link, repo, techs, ref } = Astro.props
 ---
 
-<article class="flex flex-col md:flex-row gap-x-8">
-  <section class="w-full md:w-1/4 mb-8 min-w-fit">
-    <slot />
-    <span class="flex gap-x-6">
-      <Button href={repo} target="_blank">
-        <Github class="size-6" />
-        Code
-      </Button>
-      {
-        link ? (
-          <Button href={link} target="_blank">
-            <Globe class="size-6" />
-            Demo
-          </Button>
-        ) : (
-          <></>
-        )
-      }
-    </span>
-  </section>
-  <section class="w-full md:w-2/4 gap-y-6">
-    <h3 class="text-2xl font-bold">{title}</h3>
+<article class="flex flex-col md:w-1/2 p-2 hover:bg-gray-800 hover:rounded-md hover:cursor-pointer transition-colors">
+  <a href=`portfolio-web${ref}`>
 
-    <ul class="flex gap-x-4 flex-row mt-2 mb-2">
-      {
-        techs.map(logo => (
-          <li>
-          <span>
-            <logo.icon class="size-8" />
-          </span>
-        </li>
-        ))
-      }
-    </ul>
-
-    <p class="text-sm text-slate-400 mt-4 mb-4">{description}</p>
-  </section>
+    <section class="overflow-hidden">
+      <slot />
+    </section>
+    <section class="w-full gap-y-10">
+      <h3 class="text-2xl font-bold my-3">{title}</h3>
+  
+      <!-- <span class="flex gap-x-6">
+        <Button href={repo} target="_blank">
+          <Github class="size-6" />
+          Repository
+        </Button>
+        {
+          link ? (
+            <Button href={link} target="_blank">
+              <Globe class="size-6" />
+              Demo
+            </Button>
+          ) : (
+            <></>
+          )
+        }
+      </span> -->
+  
+      <p class="text-sm text-slate-400 mt-4 mb-4 w-3/4 md:w-4/5">{description}</p>
+  
+      <!-- <ul class="flex gap-x-4 flex-row mt-2 mb-2">
+        {
+          techs.map(logo => (
+            <li>
+            <span>
+              <logo.icon class="size-8" />
+            </span>
+          </li>
+          ))
+        }
+      </ul> -->
+  
+    </section>
+  </a>
 </article>
