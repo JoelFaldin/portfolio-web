@@ -25,36 +25,29 @@ import Email from "@/components/logos/Email.astro";
 			</a>
 			<h2 class="text-xl md:text-2xl opacity-90 pt-7 pb-5 text-wrap max-w-[700px]">University student, web developer from Chile! Focused on creating web applications.</h2>
 			
-			<nav class="flex gap-x-4 text-wrap">
+			<nav class="flex flex-col md:flex-row gap-y-5 w-fit gap-x-4 text-wrap">
 				<Button href="https://github.com/JoelFaldin" target="_blank">
-					<Github class="size-4 md:size-6" />
+					<Github class="size-6" />
 					Github
 				</Button>
 				<Button href="https://www.linkedin.com/in/joel-faldín/" target="_blank">
-					<Linkedin class="size-4 md:size-6" />
+					<Linkedin class="size-6" />
 					LinkedIn
 				</Button>
 				<Button href="/Portfolio-web/contact">
-					<Email class="size-4 md:size-6" />
+					<Email class="size-6" />
 					Contact me
 				</Button>
 			</nav>
 		</Section>
 
-		<Section class="py-10">
+		<Section class="py-10" id="experience">
 			<h1 class="text-white text-3xl font-bold pb-5 flex gap-x-4 items-center">
 				<Plane class="size-8" />
 				Experience
 			</h1>
 
 			<div class="flex flex-col gap-y-5">
-				<ExpItem expTitle="Freelance" date="march 2024 - today" place="Independent">
-					<span class="flex flex-col gap-y-2">
-						<p>Worked alongside a team of <span class="text-cyan-500">incredible people</span>, developing a web application for a real client as a part of the requirements for a university subject.</p>
-						<p>Mainly worked on the <span class="text-cyan-500">backend</span> side, where a RESTful api was built using express and MySQL.</p>
-						<p>For the frontend, we used React with Vite, Typescript and TailwindCSS.</p>
-					</span>
-				</ExpItem>
 				<ExpItem expTitle="Internship" date="jan 2024 - march 2024" place="Municipalidad de Iquique">
 					<span class="flex flex-col gap-y-2">
 						<p>Developed a <span class="text-cyan-500 text-bold">full stack project</span> using React, Typescript and TailwindCSS for the frontend. In the backend side, we used JavaScript and NodeJS to make a RESTful api, using the <span class="underline">Express</span> library and MongoDB.</p>
@@ -64,7 +57,7 @@ import Email from "@/components/logos/Email.astro";
 			</div>
 		</Section>
 
-		<Section class="py-10">
+		<Section class="py-10" id="projects">
 			<h1 class="text-white text-3xl font-bold pb-5 flex gap-x-4 items-center">
 				<Tools class="size-10" />
 				My projects
@@ -77,7 +70,7 @@ import Email from "@/components/logos/Email.astro";
 				repo="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID"
 				techs={[logos.REACT, logos.TAILWIND, logos.VITE, logos.EXPRESS, logos.MYSQL]}
 			>
-				<img class="border border-slate-600 rounded shadow-2xl shadow-white/10 h-60 w-auto" src="/Portfolio-web/images/bsw_screenshot.png" alt="Image example of the BlackSharkWeb project">
+				<img class="border border-slate-600 rounded shadow-2xl shadow-white/10 h-60 w-auto mb-2" src="/Portfolio-web/images/bsw_screenshot.png" alt="Image example of the BlackSharkWeb project">
 			</Project>
 			<Project
 				title="React User Administration"
@@ -85,7 +78,7 @@ import Email from "@/components/logos/Email.astro";
 				repo="https://github.com/JoelFaldin/React-User-Administration-Frontend"
 				techs={[logos.REACT, logos.TAILWIND, logos.VITE, logos.EXPRESS, logos.MONGO]}
 			>
-				<img class="border border-slate-600 rounded shadow-2xl shadow-white/10 h-60 w-auto" src="/Portfolio-web/images/user_admin_screenshot.png" alt="Admin view of the React User Administration project." />
+				<img class="border border-slate-600 rounded shadow-2xl shadow-white/10 h-60 w-auto mb-2" src="/Portfolio-web/images/user_admin_screenshot.png" alt="Admin view of the React User Administration project." />
 			</Project>
 		</Section>
 	</main>
