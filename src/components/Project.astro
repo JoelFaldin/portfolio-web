@@ -1,8 +1,4 @@
 ---
-import Button from '@/components/Button.astro'
-import Globe from '@/components/Globe.astro'
-import Github from '@/components/logos/Github.astro'
-
 interface Tech {
   name: string,
   icon: any
@@ -11,13 +7,11 @@ interface Tech {
 interface Props {
   title: string,
   description: string,
-  link?: string,
-  repo: string,
   techs: Array<Tech>,
   ref: string
 }
 
-const { title, description, link, repo, techs, ref } = Astro.props
+const { title, description, techs, ref } = Astro.props
 ---
 
 <article class="flex flex-col md:w-1/2 p-2 hover:bg-gray-800 hover:rounded-md hover:cursor-pointer transition-colors">
@@ -28,23 +22,6 @@ const { title, description, link, repo, techs, ref } = Astro.props
     </section>
     <section class="w-full gap-y-10">
       <h3 class="text-2xl font-bold my-3">{title}</h3>
-  
-      <!-- <span class="flex gap-x-6">
-        <Button href={repo} target="_blank">
-          <Github class="size-6" />
-          Repository
-        </Button>
-        {
-          link ? (
-            <Button href={link} target="_blank">
-              <Globe class="size-6" />
-              Demo
-            </Button>
-          ) : (
-            <></>
-          )
-        }
-      </span> -->
   
       <p class="text-sm text-slate-400 mt-4 mb-4 w-3/4 md:w-4/5">{description}</p>
   
