@@ -58,6 +58,8 @@ const images = [
         <img
           src="/portfolio-web/images/user_admin_screenshot.webp"
           alt="Main view of the User Administration project"
+          height="210"
+          width="420"
           class="shadow-xl border border-cyan-500"
         >
       </section>
@@ -66,10 +68,16 @@ const images = [
     <article class="mb-10">
       <h2 class="text-3xl font-bold">More images:</h2>
 
-      <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
+      <section class="grid grid-cols-1 xl:grid-cols-2 gap-4 my-8">
         {
           images.map(pic => (
-            <img src={pic} class="w-fit shadow-2xl" alt="Image examples of the React User Administration project" />
+            <img
+              src={pic}
+              height="300"
+              width="600"
+              class="w-fit shadow-2xl"
+              alt="Image examples of the React User Administration project"
+            />
           ))
         }
       </section>
