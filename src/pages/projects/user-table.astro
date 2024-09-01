@@ -1,10 +1,8 @@
 ---
 import Button from "@/components/Button.astro";
 import Github from "@/components/logos/Github.astro";
-import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
 import logos from "@/logos";
-import { LocalImageUsedWrongly } from "node_modules/astro/dist/core/errors/errors-data";
 
 const technologies = [
   logos.REACT,
@@ -15,16 +13,16 @@ const technologies = [
 ]
 
 const images = [
-  "/portfolio-web/images/user_table_gallery/login.png",
-  "/portfolio-web/images/user_table_gallery/user_view.png",
-  "/portfolio-web/images/user_table_gallery/user_creation.png",
-  "/portfolio-web/images/user_table_gallery/excel_management.png",
-  "/portfolio-web/images/user_table_gallery/direction_management.png"
+  "/portfolio-web/images/user_table_gallery/login.webp",
+  "/portfolio-web/images/user_table_gallery/user_view.webp",
+  "/portfolio-web/images/user_table_gallery/user_creation.webp",
+  "/portfolio-web/images/user_table_gallery/excel_management.webp",
+  "/portfolio-web/images/user_table_gallery/direction_management.webp"
 ]
 ---
 
 <Layout title="User Administration Table" desc="Details about the User Admin. Table project!">
-  <Section class="pt-40 pb-40 w-full md:w-8/12 mx-auto">
+  <section class="pt-40 pb-40 w-full md:w-9/12 mx-auto">
     <h1 class="text-4xl font-bold mb-5 underline">React User Administration</h1>
     
     <nav class="flex flex-col md:flex-row gap-y-5 w-fit gap-x-4 text-wrap mb-5">
@@ -58,7 +56,8 @@ const images = [
       </section>
       <section class="w-3/5">
         <img
-          src="/portfolio-web/images/user_admin_screenshot.png" alt="Main view of the User Administration project"
+          src="/portfolio-web/images/user_admin_screenshot.webp"
+          alt="Main view of the User Administration project"
           class="shadow-xl border border-cyan-500"
         >
       </section>
@@ -75,5 +74,5 @@ const images = [
         }
       </section>
     </article>
-  </Section>
+  </section>
 </Layout>

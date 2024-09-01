@@ -14,16 +14,16 @@ const technologies = [
 ]
 
 const images = [
-  "/portfolio-web/images/bsw_gallery/services.png",
-  "/portfolio-web/images/bsw_gallery/gallery.png",
-  "/portfolio-web/images/bsw_gallery/contact.png",
-  "/portfolio-web/images/bsw_gallery/login.png",
-  "/portfolio-web/images/bsw_gallery/collaborations.png"
+  "/portfolio-web/images/bsw_gallery/services.webp",
+  "/portfolio-web/images/bsw_gallery/gallery.webp",
+  "/portfolio-web/images/bsw_gallery/contact.webp",
+  "/portfolio-web/images/bsw_gallery/login.webp",
+  "/portfolio-web/images/bsw_gallery/collaborations.webp"
 ]
 ---
 
 <Layout title="BlackSharkWeb" desc="Details about the BlackSharkWeb project!">
-  <section class="pt-40 pb-20 w-full md:w-8/12 mx-auto">
+  <section class="pt-40 pb-20 w-full md:w-9/12 mx-auto">
     <h1 class="text-4xl font-bold mb-5 underline">BlackSharkWeb</h1>
 
     <nav class="flex flex-col md:flex-row gap-y-5 w-fit gap-x-4 text-wrap mb-5">
@@ -37,8 +37,8 @@ const images = [
       </Button>
     </nav>
 
-    <article class="flex flex-row gap-x-10 pb-14">
-      <section class="w-2/5 text-wrap flex flex-col gap-y-2">
+    <article class="flex flex-col lg:flex-row gap-x-10 pb-14">
+      <section class="w-full lg:w-2/5 text-wrap flex flex-col gap-y-2">
         <p>
           In this project, I was part of a team of awesome people to work on a Full Stack web application for the
           <a class="hover:underline text-cyan-500" href="https://www.instagram.com/blackshark.studios/">BlackSharkStudios</a>
@@ -78,9 +78,11 @@ const images = [
       </section>
       <section class="w-3/5">
         <img
-          src="/portfolio-web/images/bsw_gallery/home.png"
+          src="/portfolio-web/images/bsw_gallery/home.webp"
           alt="Homepage of the BlackSharkWeb project"
-          class="shadow-xl border border-cyan-500"
+          height="350"
+          width="700"
+          class="shadow-xl border border-cyan-500 h-72 w-auto md:h-[350px] min-w-fit"
         >
       </section>
     </article>
@@ -88,10 +90,16 @@ const images = [
     <article class="mb-10">
       <h2 class="text-3xl font-bold">More images:</h2>
 
-      <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
+      <section class="grid grid-cols-1 xl:grid-cols-2 gap-4 my-8">
         {
           images.map(pic => (
-            <img src={pic} class="w-fit shadow-2xl" alt="Image examples of the BlackSharkWeb pages" />
+            <img
+              src={pic}
+              height="260"
+              width="530"
+              class="w-fit shadow-2xl"
+              alt="Image examples of the BlackSharkWeb pages"
+            />
           ))
         }
       </section>
