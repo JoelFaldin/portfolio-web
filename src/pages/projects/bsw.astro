@@ -27,11 +27,11 @@ const images = [
     <h1 class="text-4xl font-bold mb-5 underline">BlackSharkWeb</h1>
 
     <nav class="flex flex-col md:flex-row gap-y-5 w-fit gap-x-4 text-wrap mb-5">
-      <Button href="https://github.com/JoelFaldin" target="_blank">
+      <Button href="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID" target="_blank">
         <Github class="size-6" />
         Github
       </Button>
-      <Button>
+      <Button href="https://blacksharkstudiosweb.web.app" target="_blank">
         <Globe class="size-6" />
         Demo
       </Button>
@@ -40,7 +40,7 @@ const images = [
     <article class="flex flex-row gap-x-10 pb-14">
       <section class="w-2/5 text-wrap flex flex-col gap-y-2">
         <p>
-          In this project, I was part of a team to work on a Full Stack web application for the
+          In this project, I was part of a team of awesome people to work on a Full Stack web application for the
           <a class="hover:underline text-cyan-500" href="https://www.instagram.com/blackshark.studios/">BlackSharkStudios</a>
           company.
         </p>
@@ -69,10 +69,8 @@ const images = [
           {
             technologies.map(logo => (
               <li>
-              <span>
                 <logo.icon class="size-8" />
-              </span>
-            </li>
+              </li>
             ))
           }
         </ul>
@@ -93,7 +91,7 @@ const images = [
       <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-8">
         {
           images.map(pic => (
-            <img src={pic} class="w-fit" alt="Captures of the BlackSharkWeb pages" />
+            <img src={pic} class="w-fit shadow-2xl" alt="Image examples of the BlackSharkWeb pages" />
           ))
         }
       </section>
