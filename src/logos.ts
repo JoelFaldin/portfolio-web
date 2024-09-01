@@ -1,4 +1,5 @@
 import ReactLogo from "./components/logos/React.astro"
+import TypeScriptLogo from "./components/logos/TS.astro"
 import TailwindLogo from "./components/logos/Tailwind.astro"
 import ViteLogo from "./components/logos/Vite.astro"
 import ExpressLogo from "./components/logos/Express.astro"
@@ -9,6 +10,10 @@ const logos = {
   REACT: {
     name: "React",
     icon: ReactLogo
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    icon: TypeScriptLogo
   },
   TAILWIND: {
     name: "Tailwind",

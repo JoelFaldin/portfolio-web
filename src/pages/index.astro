@@ -1,5 +1,4 @@
 ---
-import Badge from "@/components/Badge.astro";
 import Github from "@/components/logos/Github.astro";
 import Linkedin from "@/components/logos/Linkedin.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -9,8 +8,9 @@ import Plane from "@/components/logos/Plane.astro";
 import Tools from "@/components/logos/Tools.astro";
 import Project from "@/components/Project.astro";
 import logos from "@/logos"
-import Button from "@/components/Button.astro";
 import Email from "@/components/logos/Email.astro";
+import BadgeShine from "@/components/BadgeShine.astro";
+import Badge from "@/components/Badge.astro";
 ---
 
 <Layout title="Web developer and Programmer" desc="Meet Joel Faldín, an Informatics student focused on web development.">
@@ -21,23 +21,25 @@ import Email from "@/components/logos/Email.astro";
 				Hello there, I'm <span class="bg-gradient-to-r from-cyan-500 to-white bg-clip-text text-transparent">Joel Faldín</span>!
 			</h1>
 			<a href="https://www.linkedin.com/in/joel-faldín/" target="_blank" rel="noopener noreferrer">
-				<Badge>Open to work</Badge>
+				<Badge>
+					Open to work
+				</Badge>
 			</a>
 			<h2 class="text-xl md:text-2xl opacity-90 pt-7 pb-5 text-wrap max-w-[700px]">University student, web developer from Chile! Focused on creating web applications.</h2>
 			
 			<nav class="flex flex-col md:flex-row gap-y-5 w-fit gap-x-4 text-wrap">
-				<Button href="https://github.com/JoelFaldin" target="_blank">
+				<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/JoelFaldin">
 					<Github class="size-6" />
 					Github
-				</Button>
-				<Button href="https://www.linkedin.com/in/joel-faldín/" target="_blank">
-					<Linkedin class="size-6" />
+				</BadgeShine>
+				<BadgeShine class="flex flex-row gap-x-2" href="https://www.linkedin.com/in/joel-faldín/">
+					<Linkedin class="size-5" />
 					LinkedIn
-				</Button>
-				<Button href="/Portfolio-web/contact">
+				</BadgeShine>
+				<BadgeShine class="flex flex-row gap-x-2" href="mailto:joelfaldin@gmail.com">
 					<Email class="size-6" />
 					Contact me
-				</Button>
+				</BadgeShine>
 			</nav>
 		</Section>
 
@@ -68,7 +70,7 @@ import Email from "@/components/logos/Email.astro";
 				<Project
 					title="BlackSharkWeb"
 					description="E-commerce-like web application showcasing different services offered by a graphic designer!"
-					techs={[logos.REACT, logos.EXPRESS, logos.MYSQL]}
+					techs={[logos.REACT, logos.TYPESCRIPT, logos.EXPRESS, logos.MYSQL]}
 					ref="/portfolio-web/projects/bsw"
 				>
 					<img
@@ -82,7 +84,7 @@ import Email from "@/components/logos/Email.astro";
 				<Project
 					title="User Administration Table"
 					description="Web application displaying user data in a table, with different types of actions you can do!"
-					techs={[logos.REACT, logos.EXPRESS, logos.MONGO]}
+					techs={[logos.REACT, logos.TYPESCRIPT, logos.EXPRESS, logos.MONGO]}
 					ref="/portfolio-web/projects/user-table"
 				>
 					<img

@@ -1,4 +1,5 @@
 ---
+import BadgeShine from "@/components/BadgeShine.astro";
 import Button from "@/components/Button.astro";
 import Globe from "@/components/Globe.astro";
 import Github from "@/components/logos/Github.astro";
@@ -7,6 +8,7 @@ import logos from "@/logos";
 
 const technologies = [
   logos.REACT,
+  logos.TYPESCRIPT,
   logos.TAILWIND,
   logos.VITE,
   logos.EXPRESS,
@@ -27,14 +29,14 @@ const images = [
     <h1 class="text-4xl font-bold mb-5 underline">BlackSharkWeb</h1>
 
     <nav class="flex flex-col md:flex-row gap-y-5 w-fit gap-x-4 text-wrap mb-5">
-      <Button href="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID" target="_blank">
+      <BadgeShine class="flex flex-row gap-x-2" href="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID">
         <Github class="size-6" />
         Github
-      </Button>
-      <Button href="https://blacksharkstudiosweb.web.app" target="_blank">
+      </BadgeShine>
+      <BadgeShine class="flex flex-row gap-x-2" href="https://blacksharkstudiosweb.web.app">
         <Globe class="size-6" />
         Demo
-      </Button>
+      </BadgeShine>
     </nav>
 
     <article class="flex flex-col lg:flex-row gap-x-10 pb-14">

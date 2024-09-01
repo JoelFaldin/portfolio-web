@@ -1,4 +1,5 @@
 ---
+import BadgeShine from "@/components/BadgeShine.astro";
 import Button from "@/components/Button.astro";
 import Github from "@/components/logos/Github.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -6,6 +7,7 @@ import logos from "@/logos";
 
 const technologies = [
   logos.REACT,
+  logos.TYPESCRIPT,
   logos.TAILWIND,
   logos.VITE,
   logos.EXPRESS,
@@ -26,14 +28,14 @@ const images = [
     <h1 class="text-4xl font-bold mb-5 underline">React User Administration</h1>
     
     <nav class="flex flex-col md:flex-row gap-y-5 w-fit gap-x-4 text-wrap mb-5">
-      <Button href="https://github.com/JoelFaldin/React-User-Administration-Frontend" target="_blank">
+      <BadgeShine class="flex flex-row gap-x-2" href="https://github.com/JoelFaldin/React-User-Administration-Frontend">
         <Github class="size-6" />
         Frontend
-      </Button>
-      <Button href="https://github.com/JoelFaldin/React-User-Administration-Backend" target="_blank">
+      </BadgeShine>
+      <BadgeShine class="flex flex-row gap-x-2" href="https://github.com/JoelFaldin/React-User-Administration-Backend">
         <Github class="size-6" />
         Backend
-      </Button>
+      </BadgeShine>
     </nav>
 
     <article class="flex flex-row gap-x-10 pb-14">
@@ -43,6 +45,7 @@ const images = [
         <p>When I started the project, I wanted to use <a href="https://tanstack.com/table/latest" class="text-cyan-500 hover:underline">TanStack Table</a> to handle all of the data in the frontend, but then my boss asked me to use querys to get the data. It was too late to change everything, so I used TanStackTable without all of its benefits. 😢</p>
         <p>This project, among other things, had different views in the frontend depending on if the logged user was an admin or not. The admin had buttons to edit and create data!</p>
         <p>Something interesting I had to implement was a way to upload and download an <span class="text-cyan-500">excel file</span>, and save its data to the database. You can see an image of it below!</p>
+        <p class="mt-5 text-xl">Technologies used:</p>
 
         <ul class="flex gap-x-4 flex-row mt-2 mb-2">
           {
