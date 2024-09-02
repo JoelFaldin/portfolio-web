@@ -13,6 +13,8 @@ import Plane from "@/components/logos/Plane.astro";
 import Project from "@/components/Project.astro";
 import Section from "@/components/Section.astro";
 import Tools from "@/components/logos/Tools.astro";
+import Moon from "@/components/logos/Moon.astro";
+import Globe from "@/components/Globe.astro";
 ---
 
 <Layout title="Web developer and Programmer" desc="Meet Joel Faldín, an Informatics student focused on web development.">
@@ -81,7 +83,18 @@ import Tools from "@/components/logos/Tools.astro";
 						height="210"
 						width="420"
 						alt="Image example of the BlackSharkWeb project"
+						slot="image"
 					/>
+					<nav class="flex flex-col md:flex-row w-fit text-wrap mb-5 py-2" slot="buttons">
+						<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID">
+							<Github class="size-6" />
+							Github
+						</BadgeShine>
+						<BadgeShine class="flex flex-row gap-x-2" href="https://blacksharkstudiosweb.web.app">
+							<Globe class="size-6" />
+							Demo
+						</BadgeShine>
+					</nav>
 				</Project>
 				<Project
 					title="User Administration Table"
@@ -95,12 +108,28 @@ import Tools from "@/components/logos/Tools.astro";
 						height="210"
 						width="420"
 						alt="Admin view of the React User Administration project."
+						slot="image"
 					/>
+					<nav class="flex flex-col md:flex-row w-fit text-wrap mb-5 py-2" slot="buttons">
+						<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/JoelFaldin/React-User-Administration-Frontend">
+							<Github class="size-6" />
+							Frontend
+						</BadgeShine>
+						<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/JoelFaldin/React-User-Administration-Backend">
+							<Github class="size-6" />
+							Backend
+						</BadgeShine>
+					</nav>
 				</Project>
 			</section>
 		</Section>
 
 		<Section class="py-10" id="aboutme">
+			<h1 class="text-white text-3xl font-bold pb-5 flex gap-x-4 items-center">
+				<Moon class="size-10" />
+				About me
+			</h1>
+
 			<AboutMe />
 		</Section>
 	</main>

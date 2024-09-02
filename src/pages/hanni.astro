@@ -1,11 +1,73 @@
 ---
 import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const firstSection = [
+  "https://i.pinimg.com/564x/b3/a4/26/b3a426cbc0542e9f513c36b9fbff411f.jpg",
+  "https://i.pinimg.com/564x/4a/d9/e5/4ad9e52a31073310aae68ca61981a2e9.jpg",
+  "https://i.pinimg.com/736x/03/1f/df/031fdfede4af769648fd89fd8eeeb48d.jpg"
+]
+
+const secondSection = [
+  "https://i.pinimg.com/564x/40/0b/ce/400bce8ccca6da08125ade231efaf4bc.jpg",
+  "https://i.pinimg.com/736x/20/fd/72/20fd72ea1df8a425d09c376ea214f81c.jpg",
+  "https://i.pinimg.com/564x/4f/64/ad/4f64ad9df2665a12bfabd548ccde3537.jpg"
+]
+
+const thirdSection = [
+  "https://i.pinimg.com/564x/26/ce/2e/26ce2ec538bc021a0eb96d6868dbca31.jpg",
+  "https://i.pinimg.com/564x/b9/e0/d0/b9e0d04983cfa973d4b5a9af2d969426.jpg",
+  "https://i.pinimg.com/736x/d1/e7/4a/d1e74ac25637eb17ce09d731a9b6127d.jpg"
+]
+
+const forthSection = [
+  "https://i.pinimg.com/564x/5d/d0/3c/5dd03cf47319dfb67c833a7f2be5d540.jpg",
+  "https://i.pinimg.com/564x/a2/db/26/a2db26ff512ca597741406fb2e29a831.jpg",
+  "https://i.pinimg.com/736x/37/5f/5d/375f5dd9bf5364fd783a46b5190d9888.jpg"
+]
 ---
 
 <Layout title="GO HANNI" desc="">
   <Section class="pt-40 pb-20">
-    <h1>GO HANNI</h1>
-    <img src="https://i.pinimg.com/564x/77/58/68/775868148f34397a4934e504cc73a5b8.jpg" alt="Go hanni" class="size-6">
+    <h1 class="font-bold text-2xl my-5">GO HANNI</h1>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="grid gap-4">
+        {
+          firstSection.map((pic, index) => (
+            <div>
+              <img src={pic} alt=`Hanni 1st section #${index}` class="h-auto max-w-full rounded-lg" />
+            </div>
+          ))
+        }
+      </div>
+      <div class="grid gap-4">
+        {
+          secondSection.map((pic, index) => (
+            <div>
+              <img src={pic} alt=`Hanni 2nd section #${index}` class="h-auto max-w-full rounded-lg" />
+            </div>
+          ))
+        }
+      </div>
+      <div class="grid gap-4">
+        {
+          thirdSection.map((pic, index) => (
+            <div>
+              <img src={pic} alt=`Hanni 3rd section #${index}` class="h-auto max-w-full rounded-lg" />
+            </div>
+          ))
+        }
+      </div>
+      <div class="grid gap-4">
+        {
+          forthSection.map((pic, index) => (
+            <div>
+              <img src={pic} alt=`Hanni 4th section #${index}` class="h-auto max-w-full rounded-lg" />
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </Section>
 </Layout>
