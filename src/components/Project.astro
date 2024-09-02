@@ -8,22 +8,21 @@ interface Props {
   title: string,
   description: string,
   techs: Array<Tech>,
-  ref: string
+  href: string
 }
 
-const { title, description, techs, ref } = Astro.props
+const { title, description, techs, href } = Astro.props
 ---
 
 <article class="flex flex-col md:w-1/2 p-2 hover:bg-gray-800 hover:rounded-md hover:cursor-pointer transition-colors">
-  <a href={ref}>
-
+  <a href={href}>
     <section class="overflow-hidden">
       <slot name="image" />
     </section>
     <section class="w-full gap-y-10">
-      <h3 class="text-2xl font-bold my-3">{title}</h3>
+      <h2 class="text-2xl font-bold my-3">{title}</h2>
   
-      <p class="text-sm text-slate-200 mt-4 mb-4 w-3/4 md:w-4/5">{description}</p>
+      <p class="text-sm text-white mt-4 mb-4 w-3/4 md:w-4/5">{description}</p>
   
       <ul class="flex gap-x-4 flex-row mt-2 mb-2">
         {
@@ -36,7 +35,7 @@ const { title, description, techs, ref } = Astro.props
           ))
         }
       </ul>
-
+  
       <slot name="buttons" />
   
     </section>

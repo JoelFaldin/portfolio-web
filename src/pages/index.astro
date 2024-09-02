@@ -15,6 +15,7 @@ import Section from "@/components/Section.astro";
 import Tools from "@/components/logos/Tools.astro";
 import Moon from "@/components/logos/Moon.astro";
 import Globe from "@/components/Globe.astro";
+import CV from "@/components/logos/CV.astro";
 ---
 
 <Layout title="Web developer and Programmer" desc="Meet Joel Faldín, an Informatics student focused on web development.">
@@ -45,6 +46,11 @@ import Globe from "@/components/Globe.astro";
 					Contact me
 				</BadgeShine>
 			</nav>
+
+			<BadgeShine class="flex flex-row gap-x-2 mt-5" href="/portfolio-web/cv_joelf.pdf" download>
+				<CV class="size-6" />
+				Download my CV
+			</BadgeShine>
 		</Section>
 
 		<Section class="py-10" id="experience">
@@ -75,7 +81,7 @@ import Globe from "@/components/Globe.astro";
 					title="BlackSharkWeb"
 					description="E-commerce-like web application showcasing different services offered by a graphic designer!"
 					techs={[logos.REACT, logos.TYPESCRIPT, logos.EXPRESS, logos.MYSQL]}
-					ref="/portfolio-web/projects/bsw"
+					href="/portfolio-web/projects/bsw"
 				>
 					<img
 						class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto md:h-52 min-w-fit"
@@ -85,7 +91,7 @@ import Globe from "@/components/Globe.astro";
 						alt="Image example of the BlackSharkWeb project"
 						slot="image"
 					/>
-					<nav class="flex flex-col md:flex-row w-fit text-wrap mb-5 py-2" slot="buttons">
+					<nav class="flex flex-col sm:flex-row w-fit mb-5 py-2" slot="buttons">
 						<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID">
 							<Github class="size-6" />
 							Github
@@ -100,7 +106,7 @@ import Globe from "@/components/Globe.astro";
 					title="User Administration Table"
 					description="Web application displaying user data in a table, with different types of actions you can do!"
 					techs={[logos.REACT, logos.TYPESCRIPT, logos.EXPRESS, logos.MONGO]}
-					ref="/portfolio-web/projects/user-table"
+					href="/portfolio-web/projects/user-table"
 				>
 					<img
 						class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto md:h-52 min-w-fit"
@@ -110,7 +116,7 @@ import Globe from "@/components/Globe.astro";
 						alt="Admin view of the React User Administration project."
 						slot="image"
 					/>
-					<nav class="flex flex-col md:flex-row w-fit text-wrap mb-5 py-2" slot="buttons">
+					<nav class="flex flex-col sm:flex-row w-fit mb-5 py-2" slot="buttons">
 						<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/JoelFaldin/React-User-Administration-Frontend">
 							<Github class="size-6" />
 							Frontend
