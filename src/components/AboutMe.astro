@@ -1,3 +1,10 @@
+---
+import BadgeShine from "./BadgeShine.astro";
+import CV from "./logos/CV.astro";
+import Email from "./logos/Email.astro";
+import Linkedin from "./logos/Linkedin.astro";
+---
+
 <section class="items-center bg-[#121212]">
   <div class="[&>p]:mb-4 [&>p>span]:text-cyan-500 [&>p>bold]:font-bold text-pretty">
     <p>
@@ -9,5 +16,25 @@
     <p>
       In my free time, I enjoy learning <span>Japanese</span>! 🍙🏯はじめまして！ (That means "Nice to meet you!")
     </p>
+    <p>
+      You can contact me via <bold>LinkedIn</bold> or <bold>Email</bold> by clicking the buttons below if you have a project in mind, I'm open to new opportunities and collaborations! Also, don't forget to check out my CV.
+    </p>
+    <p>
+      See ya!
+    </p>
   </div>
+  <nav class="flex flex-col sm:flex-row gap-y-5 w-fit gap-x-4 text-wrap">
+    <BadgeShine class="flex flex-row gap-x-2" href="https://www.linkedin.com/in/joel-faldín/">
+      <Linkedin class="size-5" />
+      LinkedIn
+    </BadgeShine>
+    <BadgeShine class="flex flex-row gap-x-2" href="mailto:joelfaldin@gmail.com">
+      <Email class="size-6" />
+      Email
+    </BadgeShine>
+    <BadgeShine class="flex flex-row gap-x-2" href="/portfolio-web/cv_joelf.pdf" download>
+      <CV class="size-6" />
+      My CV
+    </BadgeShine>
+  </nav>
 </section>

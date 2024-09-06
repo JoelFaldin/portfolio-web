@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import logos from "@/logos"
 
 import AboutMe from "@/components/AboutMe.astro";
 import Badge from "@/components/Badge.astro";
@@ -10,26 +9,26 @@ import ExpItem from "@/components/ExpItem.astro";
 import Github from "@/components/logos/Github.astro";
 import Linkedin from "@/components/logos/Linkedin.astro";
 import Plane from "@/components/logos/Plane.astro";
-import Project from "@/components/Project.astro";
 import Section from "@/components/Section.astro";
 import Tools from "@/components/logos/Tools.astro";
 import Moon from "@/components/logos/Moon.astro";
-import Globe from "@/components/Globe.astro";
 import CV from "@/components/logos/CV.astro";
+import Projects from "@/components/Projects.astro";
 ---
 
 <Layout title="Web developer and Programmer" desc="Meet Joel Faldín, an Informatics student focused on web development.">
 	<main class="px-6">
-		<Section class="pt-40 flex flex-col lg:flex-row justify-center h-fit">
+		<Section class="pt-40 flex flex-col lg:flex-row justify-center h-fit py-10">
 			<section class="w-2/4 mx-auto">
 				<img
+					id="home"
 					src="/portfolio-web/images/ProfilePic.webp"
 					alt="Profile picture"
 					class="rounded-full w-fit h-[20rem] mb-16 lg:mb-5 shadow-2xl border border-blue-600/50"
 				>
 			</section>
 			<section class="w-full lg:w-2/4 mx-auto">
-				<h1 class="text-white text-4xl font-bold pb-4 md:pb-2" id="home">
+				<h1 class="text-white text-4xl font-bold pb-4 md:pb-2">
 					Hello there, I'm <span class="bg-gradient-to-r from-cyan-500 to-white bg-clip-text text-transparent">Joel Faldín</span>!
 				</h1>
 				<a href="https://www.linkedin.com/in/joel-faldín/" target="_blank" rel="noopener noreferrer">
@@ -84,58 +83,7 @@ import CV from "@/components/logos/CV.astro";
 				My projects
 			</h1>
 
-			<section class="flex flex-col md:flex-row gap-x-4 gap-y-6">
-				<Project
-					title="BlackSharkWeb"
-					description="E-commerce-like web application showcasing different services offered by a graphic designer!"
-					techs={[logos.REACT, logos.TYPESCRIPT, logos.EXPRESS, logos.MYSQL]}
-					href="/portfolio-web/projects/bsw"
-				>
-					<img
-						class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto md:h-52 min-w-fit"
-						src="/portfolio-web/images/bsw_screenshot.webp"
-						height="210"
-						width="420"
-						alt="Image example of the BlackSharkWeb project"
-						slot="image"
-					/>
-					<nav class="flex flex-col sm:flex-row w-fit mb-5 py-2" slot="buttons">
-						<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID">
-							<Github class="size-6" />
-							Github
-						</BadgeShine>
-						<BadgeShine class="flex flex-row gap-x-2" href="https://blacksharkstudiosweb.web.app">
-							<Globe class="size-6" />
-							Demo
-						</BadgeShine>
-					</nav>
-				</Project>
-				<Project
-					title="User Administration Table"
-					description="Web application displaying user data in a table, with different types of actions you can do!"
-					techs={[logos.REACT, logos.TYPESCRIPT, logos.EXPRESS, logos.MONGO]}
-					href="/portfolio-web/projects/user-table"
-				>
-					<img
-						class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto md:h-52 min-w-fit"
-						src="/portfolio-web/images/user_admin_screenshot.webp"
-						height="210"
-						width="420"
-						alt="Admin view of the React User Administration project."
-						slot="image"
-					/>
-					<nav class="flex flex-col sm:flex-row w-fit mb-5 py-2" slot="buttons">
-						<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/JoelFaldin/React-User-Administration-Frontend">
-							<Github class="size-6" />
-							Frontend
-						</BadgeShine>
-						<BadgeShine class="flex flex-row gap-x-2" href="https://github.com/JoelFaldin/React-User-Administration-Backend">
-							<Github class="size-6" />
-							Backend
-						</BadgeShine>
-					</nav>
-				</Project>
-			</section>
+			<Projects />
 		</Section>
 
 		<Section class="py-10" id="aboutme">
