@@ -8,14 +8,13 @@ interface Props {
   title: string,
   description: string,
   techs: Array<Tech>,
-  href: string
 }
 
-const { title, description, techs, href } = Astro.props
+const { title, description, techs } = Astro.props
 ---
 
-<article class="flex flex-col md:w-1/2 p-2 hover:bg-gray-800 hover:rounded-md hover:cursor-pointer transition-colors">
-  <a href={href}>
+<article class="flex flex-col md:w-1/2 p-2 ">
+  <div class="hover:bg-gray-800 hover:rounded-md hover:cursor-pointer transition-colors py-5 px-2">
     <section class="overflow-hidden">
       <slot name="image" />
     </section>
@@ -35,9 +34,8 @@ const { title, description, techs, href } = Astro.props
           ))
         }
       </ul>
-  
-      <slot name="buttons" />
-  
     </section>
-  </a>
+  </div>
+
+  <slot name="buttons" />
 </article>
