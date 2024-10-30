@@ -5,6 +5,8 @@ import ViteLogo from "./components/logos/Vite.astro"
 import ExpressLogo from "./components/logos/Express.astro"
 import MongoLogo from "./components/logos/Mongo.astro"
 import MySQLogo from "./components/logos/MySQL.astro"
+import NestJS from "./components/logos/NestJS.astro"
+import Prisma from "./components/logos/Prisma.astro"
 
 const logos = {
   REACT: {
@@ -34,6 +36,14 @@ const logos = {
   MYSQL: {
     name: "MySQL",
     icon: MySQLogo
+  },
+  NestJS: {
+    name: 'NestJS',
+    icon: NestJS
+  },
+  Prisma: {
+    name: 'PrismaORM',
+    icon: Prisma
   }
 }
 
