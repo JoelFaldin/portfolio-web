@@ -2,6 +2,12 @@
 
 Welcome to my portfolio! 👋
 
+<div align="center">
+  
+  <img src="https://wallpaper.forfun.com/fetch/b4/b4696f439882a59494c3ccc37101ad63.jpeg" width="700" />
+  
+</div>
+
 This website displays information about me: my 'work' experience, my projects, technologies and the tools I use on my every day.
 
 Built using [Astro](https://astro.build) and [TailwindCSS](https://tailwindcss.com), taking inspiration from [Midudev's portfolio](https://github.com/midudev/porfolio.dev).
@@ -13,10 +19,16 @@ Built using [Astro](https://astro.build) and [TailwindCSS](https://tailwindcss.c
   - Featured projects
   - About me
 
-  ## Stack:
-  - ![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
-  - ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-  - ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+  ## Stack
+  
+<div align="center">
+
+![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+  
+
+</div>
 
 ---
 
@@ -52,3 +64,9 @@ In case you want to locally install this project, follow this:
 ---
 
 ### Thanks for visiting my portfolio! 😎
+
+<div align="center">
+  
+  <img src="https://wallpaper.forfun.com/fetch/3b/3bfcbff61d5562359ef4d9fccf744904.jpeg" width="700" />
+  
+</div>
