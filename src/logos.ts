@@ -7,6 +7,8 @@ import MongoLogo from "./components/logos/Mongo.astro"
 import MySQLogo from "./components/logos/MySQL.astro"
 import NestJS from "./components/logos/NestJS.astro"
 import Prisma from "./components/logos/Prisma.astro"
+import NextJS from "./components/logos/NextJS.astro"
+import Supabase from "./components/logos/Supabase.astro"
 
 const logos = {
   REACT: {
@@ -37,13 +39,21 @@ const logos = {
     name: "MySQL",
     icon: MySQLogo
   },
-  NestJS: {
+  NESTJS: {
     name: 'NestJS',
     icon: NestJS
   },
-  Prisma: {
+  PRISMA: {
     name: 'PrismaORM',
     icon: Prisma
+  },
+  NEXTJS: {
+    name: 'NextJS',
+    icon: NextJS
+  },
+  SUPABASE: {
+    name: 'Supabase',
+    icon: Supabase
   }
 }
 

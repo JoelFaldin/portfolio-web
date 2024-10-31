@@ -7,22 +7,22 @@ import Github from "./logos/Github.astro";
 import Project from "./Project.astro";
 ---
 
-<section class="flex flex-col md:flex-row gap-x-4 gap-y-6">
-  <a href="/portfolio-web/projects/bsw" aria-label="Read more about the BlackSharkWeb project!">
+<section class="grid lg:grid-cols-2 grid-cols-1 justify-items-center gap-x-4 gap-y-6">
     <Project
       title="BlackSharkWeb"
       description="E-commerce-like web application showcasing different services offered by a graphic designer!"
       techs={[logos.REACT, logos.TYPESCRIPT, logos.EXPRESS, logos.MYSQL]}
+      href="/portfolio-web/projects/bsw"
     >
       <img
-        class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto md:h-52 min-w-fit"
+        class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto lg:h-52 min-w-fit"
         src="/portfolio-web/images/bsw_screenshot.webp"
         height="210"
         width="420"
         alt="Image example of the BlackSharkWeb project"
         slot="image"
       />
-      <nav class="flex flex-col sm:flex-row w-fit py-2" slot="buttons">
+      <nav class="flex flex-col sm:flex-row w-fit py-2 gap-x-1" slot="buttons">
         <BadgeShine class="flex flex-row gap-x-2" href="https://github.com/IgnacioBarraza/Proyecto_IngenieriaSoftware_SID">
           <Github class="size-6" />
           Github
@@ -33,22 +33,21 @@ import Project from "./Project.astro";
         </BadgeShine>
       </nav>
     </Project>
-  </a>
-  <a href="/portfolio-web/projects/connect-desk" aria-label="Read more about the ConnectDesk project!">
     <Project
       title="ConnectDesk"
       description="Web application displaying user data in a table, with different types of actions you can do!"
-      techs={[logos.REACT, logos.TYPESCRIPT, logos.NestJS, logos.Prisma]}
+      techs={[logos.REACT, logos.TYPESCRIPT, logos.NESTJS, logos.PRISMA]}
+      href="/portfolio-web/projects/connect-desk"
     >
       <img
-        class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto md:h-52 min-w-fit"
+        class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto lg:h-52 min-w-fit"
         src="/portfolio-web/images/user_admin_screenshot.webp"
         height="210"
         width="420"
         alt="Admin view of the React User Administration project."
         slot="image"
       />
-      <nav class="flex flex-col sm:flex-row w-fit py-2 pointer-events-none" slot="buttons">
+      <nav class="flex flex-col sm:flex-row w-fit py-2 pointer-events-none gap-x-1" slot="buttons">
         <BadgeShine class="flex flex-row gap-x-2 pointer-events-auto" href="https://github.com/JoelFaldin/React-User-Administration-Frontend">
           <Github class="size-6" />
           Frontend
@@ -59,5 +58,30 @@ import Project from "./Project.astro";
         </BadgeShine>
       </nav>
     </Project>
-  </a>
+    <Project
+      title="Pomodoro Totoro"
+      description="Mini project dedicated to the Pomodoro Technique!"
+      techs={[logos.NEXTJS, logos.TYPESCRIPT, logos.SUPABASE, logos.PRISMA]}
+      href="/portfolio-web/projects/pomodoro"
+    >
+      <img
+        class="transform transition-transform duration-200 hover:scale-105 border border-slate-600 rounded shadow-2xl shadow-white/10 h-72 w-auto lg:h-52 min-w-fit"
+        src="/portfolio-web/images/pomodoro_totoro_landpage.webp"
+        height="210"
+        width="420"
+        alt="Landpage of the Pomodoro Totoro project!"
+        slot="image"
+      />
+
+      <nav class="flex flex-col sm:flex-row w-fit py-2 pointer-events-none gap-x-1" slot="buttons">
+        <BadgeShine class="flex flex-row gap-x-2 pointer-events-auto" href="https://github.com/JoelFaldin/pomodoro-totoro">
+          <Github class="size-6" />
+          Github
+        </BadgeShine>
+        <BadgeShine class="flex flex-row gap-x-2 pointer-events-auto" href="https://pomodoro-totoro.vercel.app">
+          <Github class="size-6" />
+          Demo
+        </BadgeShine>
+      </nav>
+    </Project>
 </section>
