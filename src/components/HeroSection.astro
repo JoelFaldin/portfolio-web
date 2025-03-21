@@ -1,5 +1,6 @@
 ---
 import Code from "./icons/Code.astro";
+import ArrowDown from "./icons/ArrowDown.astro";
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -57,30 +58,35 @@ import Code from "./icons/Code.astro";
 
             <div class="order-1 md:order-2 flex justify-center">
                 <div class="relative">
-                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-[#e6c478]/20 absolute -top-6 -left-6 animate-pulse"></div>
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-[#e6c478]/20 absolute -top-6 -left-6 animate-pulse" />
                     <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden relative border-2 border-[#e6c478]">
-                    <img
-                        src="/images/ProfilePic.webp"
-                        alt="John Doe - Web Developer"
-                        class="w-full h-full object-cover"
-                    />
+                        <img
+                            src="/images/ProfilePic.webp"
+                            alt="John Doe - Web Developer"
+                            class="w-full h-full object-cover"
+                        />
                     </div>
                     <div class="absolute -bottom-4 -right-4 bg-[#0a0a14] p-4 rounded-full border border-[#e6c478]">
-                    <Code class="w-10 h-10 text-[#e6c478]" />
+                        <Code class="w-10 h-10 text-[#e6c478]" />
                     </div>
 
-                    {/* Tech badges */}
                     <div class="absolute -top-2 -right-2 bg-[#0a0a14] py-1 px-3 rounded-full border border-[#e6c478] text-[#e6c478] text-sm font-medium">
-                    React
+                        React
                     </div>
                     <div class="absolute top-1/4 -right-4 bg-[#0a0a14] py-1 px-3 rounded-full border border-[#e6c478] text-[#e6c478] text-sm font-medium">
-                    Next.js
+                        Next.js
                     </div>
                     <div class="absolute bottom-1/4 -right-6 bg-[#0a0a14] py-1 px-3 rounded-full border border-[#e6c478] text-[#e6c478] text-sm font-medium">
-                    TypeScript
+                        TypeScript
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#about">
+            <ArrowDown class="w-10 h-10 text-[#e6c478]" />
+        </a>
     </div>
 </section>
