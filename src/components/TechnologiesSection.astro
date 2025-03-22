@@ -1,0 +1,62 @@
+---
+import { logoList } from '../logos';
+---
+<section id="technologies" class="py-24 bg-[#0a0a14]">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-6 text-white font-serif text-center">
+            <span class="text-[#e6c478]">Tech</span> Stack
+        </h2>
+        <p class="text-center text-zinc-300 mb-12 max-w-2xl mx-auto">These are the technologies and tools I use on my daily basis as a web developer! 🛠</p>
+        
+        <div class="max-w-[800px] mx-auto scroll__container overflow-hidden ">
+            <ul class="flex flex-row gap-6 py-2 flex-nowrap scroll__inner">
+                {logoList.map((logo) => (
+                    <li>
+                        <logo.icon class="size-16" />
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+    const scroll = document.querySelectorAll('.scroll__container');
+
+    scroll.forEach(sc => {
+        sc.setAttribute('data-animated', "true");
+
+        const scrollInner = document.querySelector('.scroll__inner');
+
+        if (scrollInner) {
+            const scrollerContent = Array.from(scrollInner.children);
+            
+            scrollerContent.forEach(item => {
+                const duplicate = item.cloneNode(true);
+                scrollInner.appendChild(duplicate);
+            })
+        }
+
+
+    })
+</script>
+
+<style>
+    .scroll__container {
+        -webkit-mask:
+            linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+
+        mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    }
+    
+    .scroll__inner {
+        width: max-content;
+        animation: scrollAnimation 30s linear infinite;
+    }
+
+    @keyframes scrollAnimation {
+        to {
+            transform: translate(calc(-50% - 0.8rem));
+        }
+    }
+</style>
