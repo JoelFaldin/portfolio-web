@@ -1,0 +1,83 @@
+---
+import Github from "./icons/Github.astro";
+import Open from "./icons/Open.astro";
+
+const projects = [
+    {
+        id: 1,
+        title: "BlackSharkWeb",
+        category: "Web",
+        image: "/images/bsw_screenshot.webp",
+        description:
+            "A full-stack e-commerce project built with React, showcasing different services offered by a graphic designer!",
+        repo: "https://github.com/IgnacioBarraza/BlackSharkWeb"
+    },
+    {
+        id: 2,
+        title: "ConnectDesk",
+        category: "Web",
+        image: "/images/user_admin_screenshot.webp",
+        description:
+            "Web application dashboard that displays user data in a table, featuring user management.",
+        repo: "https://github.com/JoelFaldin/ConnectDesk-Frontend"
+    },
+    {
+        id: 3,
+        title: "PomodoroTotoro",
+        category: "Web",
+        image: "/images/pomodoro_totoro_landpage.webp",
+        description:
+            "A NextJS app timer application for studying sessions, with custom audio management.",
+        repo: "https://github.com/JoelFaldin/pomodoro-totoro.git"
+    },
+]
+---
+<section id="projects" class="py-24 bg-[#0a0a14]">
+    <div class="container px-4 mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-white font-serif text-center">
+            <span class="text-[#e6c478]">Projects</span> section
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+                <div class="bg-[#0f0f1a] border-none overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <div class="h-56 overflow-hidden">
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                            />
+                        </div>
+                        <div class="absolute top-3 left-3 bg-[#0a0a14]/80 backdrop-blur-sm text-[#e6c478] text-sm font-medium py-1 px-3 rounded-full">
+                            {project.category}
+                        </div>
+                    </div>
+                    <section class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">{project.title}</h3>
+                        </div>
+                        <p class="text-zinc-400 mb-6 line-clamp-2">{project.description}</p>
+
+                        <div class="flex flex-row gap-x-2">
+                            <a
+                                class="w-full bg-[#e6c478] hover:bg-[#d4b366] text-[#0a0a14] px-6 py-2 rounded-md flex flex-row items-center justify-center"
+                                href=""
+                            >
+                                <Open class="w-4 h-4 mr-2" />
+                                View Project
+                            </a>
+                            <a
+                                class="w-full border-[#e6c478] text-[#e6c478] hover:bg-[#e6c478]/10 text-lg px-6 py-2 rounded-md flex flex-row items-center justify-center"
+                                href={project.repo}
+                                target="_blank"
+                            >
+                                <Github class="w-4 h-4 mr-2" />
+                                Check repository
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
