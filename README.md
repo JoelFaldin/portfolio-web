@@ -1,48 +1,72 @@
-# Astro Starter Kit: Basics
+# Joel's portfolio 🚀🧑‍🚀
 
-```sh
-pnpm create astro@latest -- --template basics
+Welcome to my portfolio! 👋
+
+<div align="center">
+  
+  <img src="https://wallpaper.forfun.com/fetch/b4/b4696f439882a59494c3ccc37101ad63.jpeg" width="700" />
+  
+</div>
+
+This website displays information about me: my 'work' experience, my projects, technologies and the tools I use on my every day.
+
+Built using [Astro](https://astro.build) and [TailwindCSS](https://tailwindcss.com), taking inspiration from [Midudev's portfolio](https://github.com/midudev/porfolio.dev).
+
+[Visit the page!](https://joelfaldin.github.io/portfolio-web/)
+
+  ## Information displayed
+  - Experience details
+  - Featured projects
+  - About me
+
+  ## Stack
+  
+<div align="center">
+
+![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+  
+
+</div>
+
+---
+
+### Installation
+
+In case you want to locally install this project, follow this:
+
+1- Clone the repo in your machine
+
+```bash
+  git clone https://github.com/JoelFaldin/portfolio-web.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2- Go to the folder:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+  cd portfolio-web
+  pnpm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+2.1- In case you don't have `pnpm` installed, check [this](https://pnpm.io/installation#using-npm) page.
 
-## 🧞 Commands
+![PNPM](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)
 
-All commands are run from the root of the project, from a terminal:
+3- Start the project in development mode:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+```bash
+  pnpm run dev
+```
 
-## 👀 Want to learn more?
+4- Now the project is locally running in your machine!
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+### Thanks for visiting my portfolio! 😎
+
+<div align="center">
+  
+  <img src="https://wallpaper.forfun.com/fetch/3b/3bfcbff61d5562359ef4d9fccf744904.jpeg" width="700" />
+  
+</div>
