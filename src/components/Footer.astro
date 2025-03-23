@@ -1,18 +1,48 @@
-<footer class="rounded-lg m-4 w-full xl:w-[1120px] mx-auto mb-4">
-  <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-    <span class="text-sm text-white sm:text-center">Inspired by Midudev's portfolio! Made with ❤️ using Astro 🚀
-  </span>
-  <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-white sm:mt-0 gap-x-5">
-    <li>
-      <a href="/portfolio-web/components" class="hover:underline">Design System</a>
-    </li>
-    <li>
-      <a href="mailto:joelfaldin@gmail.com" class="hover:underline">Contact</a>
-    </li>
-    <li class="flex flex-row items-center gap-x-1">
-      <img src="/portfolio-web/images/icon.webp" height="12" width="12" alt="Link to my repo!" class="size-3">
-      <a href="https://github.com/JoelFaldin" class="hover:underline">Hanni</a>
-    </li>
-  </ul>
-  </div>
-</footer>
+---
+import Code from "./icons/Code.astro";
+import Email from "./icons/Email.astro";
+import Linkedin from "./icons/Linkedin.astro";
+---
+<section id="footer" class="bg-[#0a0a14] border-t border-[#e6c478]/10 py-12">
+    <div class="mx-10 px-20 flex flex-col md:flex-row justify-between items-center">
+        <div class="flex flex-col">
+            <span class="flex flex-row gap-x-2">
+                <Code class="w-8 h-8 text-[#e6c478]" />
+                <h3 class="flex items-center gap-2 text-xl font-bold text-white">Joel Faldín</h3>
+            </span>
+            <p class="text-zinc-400 mt-2 max-w-xs">Building Full Stack web applications, turning ideas into reality!</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-x-16">
+            <nav class="flex flex-row gap-6">
+                <a href="#home" class="text-zinc-300 hover:text-[#e6c478] transition-colors">Home</a>
+                <a href="#about" class="text-zinc-300 hover:text-[#e6c478] transition-colors">About</a>
+                <a href="#projects" class="text-zinc-300 hover:text-[#e6c478] transition-colors">Projects</a>
+                <a href="#technologies" class="text-zinc-300 hover:text-[#e6c478] transition-colors">Tech Stack</a>
+                <a href="#contact" class="text-zinc-300 hover:text-[#e6c478] transition-colors">Contact</a>
+            </nav>
+
+            <span class="flex flex-row gap-x-6">
+                <a href="mailto:joelfaldin@gmail.com" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#e6c478]/10 text-[#e6c478] mt-1">
+                    <Email />
+                </a>
+                <a href="https://www.linkedin.com/in/joel-fald%C3%ADn/" target="_blank" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#e6c478]/10 text-[#e6c478] mt-1">
+                    <Linkedin />
+                </a>
+                <a href="#" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#e6c478]/10 text-[#e6c478] mt-1">
+                    <img
+                        src="/images/icon.webp"
+                        class="rounded-full h-6 w-6"
+                    />
+                </a>
+            </span>
+        </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-[#e6c478]/10 text-center text-zinc-400">
+        <p>Design by
+            <a class="text-[#e6c478] underline" href="https://v0.dev/" target="_blank">v0</a>! 
+            Made with ❤️ using Astro! 🚀
+        </p>
+    </div>
+</section>

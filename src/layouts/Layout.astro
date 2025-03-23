@@ -1,48 +1,28 @@
 ---
-import '@fontsource-variable/raleway';
-import Header from '@/components/Header.astro';
-import Footer from '@/components/Footer.astro';
+import { Toaster } from 'react-hot-toast';
 
-interface Props {
-  title: string,
-  desc: string
-}
-
-const { title, desc } = Astro.props
+import '../styles/global.css'
 ---
-
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content={desc} >
-  <link rel="icon" href="/portfolio-web/favicon.svg">
-  <title>Joel's Portfolio | {title}</title>
-</head>
-<body>
-  <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-[-1]"></div>
-
-  <Header />
-  <slot />
-  <Footer />
-
-</body>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Joel's Porfolio | Web Developer and Programmer</title>
+	</head>
+	<body>
+		<Toaster position="bottom-right" reverseOrder={false} client:idle />
+		<slot />
+	</body>
 </html>
 
-<style is:global>
-  :root {
-    color-scheme: dark;
-  }
-
-  html {
-    font-family: 'Raleway Variable', sans-serif;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
 </style>
