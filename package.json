@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build --remote",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/db": "^0.14.8",
     "@astrojs/react": "^4.2.1",
     "@tailwindcss/vite": "^4.0.14",
     "@types/react": "^19.0.12",

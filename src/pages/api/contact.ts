@@ -1,9 +1,19 @@
 import type { APIRoute } from "astro";
+import { db, Messages } from "astro:db";
+import { randomUUID } from "node:crypto";
 
 export const POST: APIRoute = async ({ request }) => {
     try {
         const data = await request.json();
-        console.log(data)
+        
+        const newMessage = {
+            messageId: randomUUID(),
+            name: data.name,
+            email: data.email,
+            message: data.message,
+        }
+
+        await db.insert(Messages).values(newMessage);
 
         return new Response(
             JSON.stringify({ ok: true, message: "Message submitted!" }),
