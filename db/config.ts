@@ -9,6 +9,13 @@ const Messages = defineTable({
   }
 })
 
+const Pics = defineTable({
+  columns: {
+    imageUrl: column.text(),
+    projectName: column.text(),
+  }
+})
+
 export default defineDb({
-  tables: { Messages },
+  tables: { Messages, Pics },
 })
