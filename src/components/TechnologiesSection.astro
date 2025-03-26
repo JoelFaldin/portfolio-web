@@ -42,20 +42,20 @@ const translateLabels = useTranslations(currentLang as keyof typeof languageList
                 </div>
                 <div class="ml-4 text-[#e6c478] text-sm font-mono">~dev</div>
             </div> 
-
-            <div class="p-6 font-mono text-sm flex flex-col md:flex-row gap-8">
-                <div class="text-[#e6c478] whitespace-pre leading-tight mx-auto w-2/5">
+        
+            <div class="p-6 font-mono text-sm grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
+                <div class="text-[#e6c478] whitespace-pre leading-tight w-full flex justify-center">
                     {`
-             /\\
-            /  \\
-           /    \\
-          /      \\
-         /   ''   \\
-        /   |  |   \\
-       /_-''    ''-_\\
+          /\\
+         /  \\
+        /    \\
+       /      \\
+      /   ''   \\
+     /   |  |   \\
+    /_-''    ''-_\\
                     `}
                 </div>
-                <div class="flex-1 text-zinc-300 w-3/5 mx-auto">
+                <div class="flex-1 text-zinc-300 w-full max-w-sm mx-auto">
                     <div class="grid grid-cols-1 gap-x-8 gap-y-2">
                         <div class="flex">
                             <span class="text-[#e6c478] w-36">OS</span>
@@ -80,7 +80,8 @@ const translateLabels = useTranslations(currentLang as keyof typeof languageList
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
+        
 </section>
 
 <script>
