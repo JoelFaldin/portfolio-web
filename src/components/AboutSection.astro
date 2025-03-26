@@ -1,6 +1,11 @@
 ---
+import type { languageList } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
 import Disc from "./icons/Disc.astro";
 import Music from "./icons/Music.astro";
+
+const currentLang = Astro.currentLocale || 'en';
+const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 ---
 
 <section id="about" class="py-32 bg-[#0f0f1a]">
@@ -23,40 +28,40 @@ import Music from "./icons/Music.astro";
             </div>
             <div class="md:w-1/2">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white font-serif flex items-center">
-                    <span class="text-[#e6c478]">About</span>
-                    <span class="ml-2">the Dev</span>
+                    <span class="text-[#e6c478]">{translateLabels("about.h2")}</span>
+                    <span class="ml-2">{translateLabels("about.dev")}</span>
                     <span class="h-px bg-[#e6c478] flex-grow ml-4 mr-4"></span>
                     <span class="bg-[#0a0a14] p-4 rounded-full border border-[#e6c478]">
                         <Disc class="w-10 h-10 text-[#e6c478]" />
                     </span>
                 </h2>
                 <p class="text-zinc-300 mb-3 leading-relaxed">
-                    My name is <span class="text-[#e6c478]">Joel Faldín</span>, and im 22 years old!
-                    I started programming 3 years ago, doing basic HTML stuff.
-                    Now, result of continuous study, self-improvemenet and growth, I'm building <span class="font-bold">Full-Stack applications</span>
-                    using a diverse set of technologies!
+                    {translateLabels("about.desc1", {
+                        name: <span class="text-[#e6c478]">Joel Faldín</span>,
+                        apps: <span class="font-bold">{currentLang === 'en' ? 'Full-Stack applications' : 'Aplicaciones web Full Stack'}</span>,
+                    })}
                 </p>
                 <p class="text-zinc-300 mb-3 leading-relaxed">
-                    I am currently in my <span class="font-bold">last year of college</span>,
-                    and I have collaborated with my comrades building the BlackSharkWeb project!
-                    My role there was to build a backend app to serve the frontend with valuable information.
+                    {translateLabels("about.desc2", {
+                        college: <span class="font-bold">{currentLang === 'en' ? 'last year of college' : 'último año de universidad'}</span>,
+                        shark: <span class="text-[#e6c478]">BlackSharkWeb</span>
+                    })}
                 </p>
                 <p class="text-zinc-300 mb-8 leading-relaxed">
-                    I am also a big fan of jazz! I love programming while listening to this relaxed genre.
-                    Could you tell by looking at the page? 🎷
+                    {translateLabels("about.desc3")}
                 </p>
                 <div class="grid grid-cols-2 gap-6">
                     <div>
-                        <h3 class="text-[#e6c478] font-bold mb-2">Skills</h3>
+                        <h3 class="text-[#e6c478] font-bold mb-2">{translateLabels("about.skills")}</h3>
                         <ul class="text-zinc-300 space-y-1">
-                            <li>Frontend Development</li>
-                            <li>Backend Development</li>
                             <li>React, Vue, NextJS, Astro</li>
                             <li>Express, NestJS</li>
+                            <li>MySQL, PostgreSQL, SQLite, MongoDB</li>
+                            <li>Linux 👍</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-[#e6c478] font-bold mb-2">Languages</h3>
+                        <h3 class="text-[#e6c478] font-bold mb-2">{translateLabels("about.langs")}</h3>
                         <ul class="text-zinc-300 space-y-1">
                             <li>TypeScript</li>
                             <li>JavaScript</li>

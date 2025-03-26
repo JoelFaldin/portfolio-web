@@ -7,7 +7,17 @@ const darkModeStyle = {
     color: '#fff',
 }
 
-const ContactForm = ({ children }: PropsWithChildren) => {
+interface FormValues {
+    name: string,
+    namePlaceholder: string,
+    emailPlaceholder: string,
+    message: string,
+    messagePlaceholder: string,
+    submit: string,
+    lang: string,
+}
+
+const ContactForm = ({ children, name, namePlaceholder, emailPlaceholder, message, messagePlaceholder, submit, lang }: PropsWithChildren<FormValues>) => {
     const [isLoading, setIsLoading] = useState(false);
     const form = useRef<HTMLFormElement | null>(null);
 
@@ -16,7 +26,7 @@ const ContactForm = ({ children }: PropsWithChildren) => {
         const formData = new FormData(event.currentTarget);
         const data = Object.fromEntries(formData.entries());
 
-        const loading = toast.loading("Saving message...", { style: darkModeStyle });
+        const loading = toast.loading(lang === 'en' ? "Saving message..." : "Guardando mensaje...", { style: darkModeStyle });
         setIsLoading(true);
 
         try {
@@ -34,7 +44,7 @@ const ContactForm = ({ children }: PropsWithChildren) => {
                 toast.error(res.message, { style: darkModeStyle })
             } else {
                 toast.dismiss(loading);
-                toast.success("Message submitted!", { style: darkModeStyle });
+                toast.success(lang === 'en' ? "Message submitted!" : "¡Mensaje enviado!", { style: darkModeStyle });
             }
 
             setIsLoading(false);
@@ -42,7 +52,10 @@ const ContactForm = ({ children }: PropsWithChildren) => {
         } catch (error) {
             console.log("Something went very wrong: ", error);
             toast.dismiss(loading);
-            toast.error("There was an error on the server, try again later.", { style: darkModeStyle });
+            toast.error(lang === 'en'
+                ? "There was an error on the server, try again later."
+                : "Ha ocurrido un error, inténtalo más tarde.",
+                { style: darkModeStyle });
             setIsLoading(false);
         }
     }
@@ -53,12 +66,12 @@ const ContactForm = ({ children }: PropsWithChildren) => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                     <div className="space-y-2 flex flex-col">
                         <label htmlFor="name" className="text-white font-medium">
-                            Name
+                            {name}
                         </label>
                         <input
                             id="name"
                             name="name"
-                            placeholder="Your name"
+                            placeholder={namePlaceholder}
                             className="text-white p-2 bg-[#0f0f1a] border rounded-lg border-[#e6c478]/20 focus-visible:ring-[#e6c478]"
                             required
                         />
@@ -71,7 +84,7 @@ const ContactForm = ({ children }: PropsWithChildren) => {
                             id="email"
                             name="email"
                             type="email"
-                            placeholder="Your email"
+                            placeholder={emailPlaceholder}
                             className="text-white p-2 bg-[#0f0f1a] border rounded-lg border-[#e6c478]/20 focus-visible:ring-[#e6c478]"
                             required
                         />
@@ -80,12 +93,12 @@ const ContactForm = ({ children }: PropsWithChildren) => {
 
                 <div className="space-y-2 flex flex-col mb-6">
                     <label htmlFor="message" className="text-white font-medium">
-                        Message
+                        {message}
                     </label>
                     <textarea
                         id="message"
                         name="message"
-                        placeholder="Your message"
+                        placeholder={messagePlaceholder}
                         className="text-white p-2 bg-[#0f0f1a] border rounded-lg align-top border-[#e6c478]/20 focus-visible:ring-[#e6c478] min-h-32 max-h-32"
                         required
                     />
@@ -93,7 +106,7 @@ const ContactForm = ({ children }: PropsWithChildren) => {
 
                 <button type="submit" disabled={isLoading} className={`${isLoading ? 'bg-[#999999] hover:bg-[#999999] cursor-default' : 'bg-[#e6c478] hover:bg-[#d4b366] cursor-pointer'} text-lg text-[#0a0a14] px-6 py-2 rounded-md flex flex-row items-center justify-center`}>
                     {children}
-                    <span className="font-bold">Send Message</span>
+                    <span className="font-bold">{submit}</span>
                 </button>
             </form>
         </div>

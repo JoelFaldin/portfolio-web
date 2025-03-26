@@ -1,4 +1,6 @@
 ---
+import type { languageList } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
 import Github from "./icons/Github.astro";
 import Open from "./icons/Open.astro";
 
@@ -8,8 +10,10 @@ const projects = [
         title: "BlackSharkWeb",
         category: "Web",
         image: "/images/bsw_screenshot.webp",
-        description:
+        enDescription:
             "A full-stack e-commerce project built with React, showcasing different services offered by a graphic designer!",
+        esDescription:
+            "Aplicación web full stack tipo e-commerce construido con React, muestra los distintos tipos de servicios que ofrece un diseñador gráfico!",
         repo: "https://github.com/IgnacioBarraza/BlackSharkWeb"
     },
     {
@@ -17,8 +21,10 @@ const projects = [
         title: "ConnectDesk",
         category: "Web",
         image: "/images/user_admin_screenshot.webp",
-        description:
+        enDescription:
             "Web application dashboard that displays user data in a table, featuring user management.",
+        esDescription:
+            "Tabla de contenido interactivo que muestra información sobre usuarios, incluye manejo de usuarios.",
         repo: "https://github.com/JoelFaldin/ConnectDesk-Frontend"
     },
     {
@@ -26,16 +32,23 @@ const projects = [
         title: "PomodoroTotoro",
         category: "Web",
         image: "/images/pomodoro_totoro_landpage.webp",
-        description:
+        enDescription:
             "A NextJS app timer application for studying sessions, with custom audio management.",
+        esDescription:
+            "Aplicación web NextJS dedicada a sesiones de estudio, con gestión de audio customizada.",
         repo: "https://github.com/JoelFaldin/pomodoro-totoro.git"
     },
 ]
+
+const currentLang = Astro.currentLocale || 'en';
+const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 ---
 <section id="projects" class="py-32 bg-[#0a0a14]">
     <div class="container px-4 mx-auto">
         <h2 class="text-4xl font-bold mb-12 text-white font-serif text-center">
-            <span class="text-[#e6c478]">Projects</span> section
+            {translateLabels("projects.h2", {
+                projects: <span class="text-[#e6c478]">{currentLang === 'en' ? 'Projects' : 'Proyectos'}</span>
+            })}
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -56,7 +69,7 @@ const projects = [
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="text-xl font-bold text-white">{project.title}</h3>
                         </div>
-                        <p class="text-zinc-400 mb-6 line-clamp-2">{project.description}</p>
+                        <p class="text-zinc-400 mb-6 line-clamp-2">{currentLang === 'en' ? project.enDescription : project.esDescription}</p>
 
                         <div class="flex flex-row gap-x-2">
                             {/* <a
@@ -72,7 +85,7 @@ const projects = [
                                 target="_blank"
                             >
                                 <Github class="w-4 h-4 mr-2" />
-                                Check repository
+                                {translateLabels("projects.button")}
                             </a>
                         </div>
                     </section>

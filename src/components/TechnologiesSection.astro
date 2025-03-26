@@ -1,12 +1,19 @@
 ---
+import type { languageList } from '@/i18n/ui';
+import { useTranslations } from '@/i18n/utils';
 import { logoList } from '../logos';
+
+const currentLang = Astro.currentLocale || 'en';
+const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 ---
 <section id="technologies" class="py-24 bg-[#0a0a14]">
     <div class="container mx-auto">
         <h2 class="text-4xl font-bold mb-6 text-white font-serif text-center">
-            <span class="text-[#e6c478]">Tech</span> Stack
+            {translateLabels("stack.h2", {
+                label: <span class="text-[#e6c478]">{currentLang === 'en' ? 'Tech' : 'Stack'}</span>
+            })}
         </h2>
-        <p class="text-center text-zinc-300 mb-12 max-w-2xl mx-auto">These are the technologies and tools I use on my daily basis as a web developer! 🛠</p>
+        <p class="text-center text-zinc-300 mb-12 max-w-2xl mx-auto">{translateLabels("stack.desc")}</p>
         
         <div class="max-w-[800px] mx-auto scroll__container overflow-hidden ">
             <ul class="flex flex-row gap-6 py-2 flex-nowrap scroll__inner">
@@ -21,7 +28,7 @@ import { logoList } from '../logos';
         <div class="mt-12 text-center">
             <div class="inline-flex items-center justify-center">
                 <div class="h-px w-12 bg-[#e6c478]/30"></div>
-                <p class="text-zinc-400 px-4">And others I'm currently learning!</p>
+                <p class="text-zinc-400 px-4">{translateLabels("stack.desc2")}</p>
                 <div class="h-px w-12 bg-[#e6c478]/30"></div>
             </div>
         </div>

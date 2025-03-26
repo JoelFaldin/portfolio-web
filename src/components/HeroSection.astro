@@ -1,6 +1,11 @@
 ---
+import type { languageList } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
 import Code from "./icons/Code.astro";
 import ArrowDown from "./icons/ArrowDown.astro";
+
+const currentLang = Astro.currentLocale || 'en';
+const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 ---
 
 <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -25,33 +30,34 @@ import ArrowDown from "./icons/ArrowDown.astro";
             </div>
 
             <p class="text-xl mb-8 text-zinc-300 leading-relaxed">
-                I build interactive, responsibe web applications with passion.
-                Specializing in <span class="text-[#e6c478]">React</span>,{" "}
-                <span class="text-[#e6c478]">TypeScript</span>, and <span class="text-[#e6c478]">Node.js</span> to
-                create interesting experiences.
+                {translateLabels("hero.desc", {
+                    react: <span class="text-[#e6c478]">React</span>,
+                    typescript: <span class="text-[#e6c478]">TypeScript</span>,
+                    nodejs: <span class="text-[#e6c478]">Node.js</span>
+                })}
             </p>
 
             <div class="flex flex-wrap gap-4">
                 <a href="#projects" class="bg-[#e6c478] hover:bg-[#d4b366] text-[#0a0a14] text-lg px-6 py-2 rounded-md">
-                    <span>View Projects</span>
+                    <span>{translateLabels("hero.projects")}</span>
                 </a>
                 <a href="https://github.com/JoelFaldin" target="_blank" class="border-[#e6c478] text-[#e6c478] hover:bg-[#e6c478]/10 text-lg px-6 py-2 rounded-md">
-                    GitHub Profile
+                    {translateLabels("hero.github")}
                 </a>
             </div>
 
             <div class="mt-12 grid grid-cols-3 gap-4">
                 <div class="text-center">
                     <div class="text-3xl font-bold text-[#e6c478]">Full Stack</div>
-                    <div class="text-zinc-400 text-sm">Applications</div>
+                    <div class="text-zinc-400 text-sm">{translateLabels("hero.applications")}</div>
                 </div>
                 <div class="text-center">
                     <div class="text-3xl font-bold text-[#e6c478]">Chile</div>
-                    <div class="text-zinc-400 text-sm">Located</div>
+                    <div class="text-zinc-400 text-sm">{translateLabels("hero.location")}</div>
                 </div>
                     <div class="text-center">
                     <div class="text-3xl font-bold text-[#e6c478]">Jazz</div>
-                    <div class="text-zinc-400 text-sm">Lover</div>
+                    <div class="text-zinc-400 text-sm">{translateLabels("hero.music")}</div>
                 </div>
             </div>
             </div>

@@ -1,4 +1,6 @@
 ---
+import type { languageList } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
 import ContactForm from "./ContactForm";
 import ContactItem from "./ContactItem.astro";
 import Email from "./icons/Email.astro";
@@ -7,28 +9,34 @@ import Phone from "./icons/Phone.astro";
 import Submit from "./icons/Submit.astro";
 import Linkedin from "./icons/Linkedin.astro";
 
+const currentLang = Astro.currentLocale || 'en';
+const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 ---
 <section id="contact" class="py-24 bg-[#0f0f1a]">
     <div class="container mx-auto">
         <h2 class="text-4xl font-bold mb-6 text-white font-serif text-center">
-            <span class="text-[#e6c478]">Contact</span> me!
+            {currentLang === 'en' ? translateLabels("contact.header", {
+                contact: <span class="text-[#e6c478]">Contact</span>
+            }) : translateLabels("contact.header1", {
+                contact: <span class="text-[#e6c478]">Contáctame</span>
+            })}
         </h2>
-        <p class="text-center text-zinc-300 mb-12 max-w-2xl mx-auto">Do you have a project in mind? Send me a message down below!</p>
+        <p class="text-center text-zinc-300 mb-12 max-w-2xl mx-auto">{translateLabels("contact.desc")}</p>
     </div>
 
     <div class="flex flex-col lg:flex-row gap-y-4 justify-center gap-x-12 mx-60">
         <section class="lg:w-4/12 flex flex-col bg-[#0a0a14] p-8 rounded-2xl border border-[#e6c478]/20">
-            <h3 class="text-xl font-bold text-white mb-6">Get in touch</h3>
+            <h3 class="text-xl font-bold text-white mb-6">{translateLabels("contact.item1")}</h3>
 
             <div class="space-y-6">
                 <section class="flex flex-col items-start gap-4">
                     <ContactItem title="Email" content="joelfaldin@gmail.com">
                         <Email class="w-5 h-5" />
                     </ContactItem>
-                    <ContactItem title="Phone" content="(+56 9) 7882 4017">
+                    <ContactItem title={translateLabels("contact.phone")} content="(+56 9) 7882 4017">
                         <Phone class="w-5 h-5" />
                     </ContactItem>
-                    <ContactItem title="Location" content="Chile">
+                    <ContactItem title={translateLabels("contact.loc")} content="Chile">
                         <Location class="w-5 h-5" />
                     </ContactItem>
                     <ContactItem title="Linkedin" content="Joel Faldín">
@@ -39,10 +47,18 @@ import Linkedin from "./icons/Linkedin.astro";
         </section>
 
         <section class="lg:w-6/12">
-            <ContactForm client:visible>
+            <ContactForm
+                name={translateLabels("contact.name").toString()}
+                namePlaceholder={translateLabels("contact.input1placeholder").toString()}
+                emailPlaceholder={translateLabels("contact.input2placeholder").toString()}
+                message={translateLabels("contact.message").toString()}
+                messagePlaceholder={translateLabels("contact.input3placeholder").toString()}
+                submit={translateLabels("contact.submit").toString()}
+                lang={currentLang}
+                client:visible
+            >
                 <Submit class="w-5 h-5 mr-2" />
             </ContactForm>
         </section>
-    </div>
     </div>
 </section>
