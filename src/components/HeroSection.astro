@@ -1,14 +1,33 @@
 ---
-import type { languageList } from "@/i18n/ui";
+import { languageList } from "@/i18n/ui";
 import { useTranslations } from "@/i18n/utils";
 import Code from "./icons/Code.astro";
 import ArrowDown from "./icons/ArrowDown.astro";
+import ChevronDown from "./icons/ChevronDown.astro";
 
 const currentLang = Astro.currentLocale || 'en';
 const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 ---
 
 <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute top-6 right-6 z-20 flex items-center">
+        <div class="relative flex flex-row gap-x-2">
+            <select
+                class="appearance-none bg-[#0a0a14] border border-[#e6c478]/30 text-[#e6c478] rounded-md py-2 pl-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#e6c478]/50 focus:border-[#e6c478] text-sm"
+                onchange="location = this.value;"
+            >
+                {Object.entries(languageList).map(([key, label]) => (
+                    <option value={`/${key}`} selected={currentLang === key}>
+                        {label}
+                    </option>
+                ))}
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#e6c478]">
+                <ChevronDown class="h-4 w-4" />
+            </div>
+        </div>
+    </div>
+
     <div
         class="absolute inset-0 bg-cover bg-center"
     >
