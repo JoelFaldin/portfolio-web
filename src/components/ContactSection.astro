@@ -24,11 +24,11 @@ const translateLabels = useTranslations(currentLang as keyof typeof languageList
         <p class="text-center text-zinc-300 mb-12 max-w-2xl mx-auto">{translateLabels("contact.desc")}</p>
     </div>
 
-    <div class="flex flex-col lg:flex-row gap-y-4 justify-center gap-x-12 mx-60">
-        <section class="lg:w-4/12 flex flex-col bg-[#0a0a14] p-8 rounded-2xl border border-[#e6c478]/20">
-            <h3 class="text-xl font-bold text-white mb-6">{translateLabels("contact.item1")}</h3>
+    <div class="flex flex-col-reverse lg:flex-row gap-y-4 justify-center gap-x-12 mx-4 sm:mx-40 xl:mx-60">
+        <section class="xl:w-4/12 min-w-[298px] flex flex-col bg-[#0a0a14] p-8 rounded-2xl border border-[#e6c478]/20">
+            <h3 class="text-xl text-center font-bold text-white mb-6">{translateLabels("contact.item1")}</h3>
 
-            <div class="space-y-6">
+            <div class="flex justify-center space-y-6">
                 <section class="flex flex-col items-start gap-4">
                     <ContactItem title="Email" content="joelfaldin@gmail.com">
                         <Email class="w-5 h-5" />
@@ -46,7 +46,7 @@ const translateLabels = useTranslations(currentLang as keyof typeof languageList
             </div>
         </section>
 
-        <section class="lg:w-6/12">
+        <section class="xl:w-6/12 min-w-[298px]">
             <ContactForm
                 name={translateLabels("contact.name").toString()}
                 namePlaceholder={translateLabels("contact.input1placeholder").toString()}

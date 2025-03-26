@@ -34,60 +34,60 @@ const translateLabels = useTranslations(currentLang as keyof typeof languageList
         <div class="absolute inset-0 bg-[#0f0f1a]/98"></div>
     </div>
 
-    <div class="container relative px-4 z-10 py-20">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-            <div class="mb-6">
-                <div class="inline-flex items-center px-3 py-1 rounded-full bg-[#e6c478]/10 text-[#e6c478] text-sm font-medium mb-4">
-                    <Code class="w-4 h-4 mr-2" />
-                    Full Stack Developer
+    <div class="px-4 z-10 py-20 mt-5">
+        <div class="flex sm:flex-row flex-col-reverse gap-12 items-center">
+            <div class="lg:w-1/2">
+                <div class="mb-6">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-[#e6c478]/10 text-[#e6c478] text-sm font-medium mb-4">
+                        <Code class="w-4 h-4 mr-2" />
+                        Full Stack Developer
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif tracking-tight">
+                        <span class="block">Joel Faldín</span>
+                        <span class="block mt-2 text-[#e6c478]">Web Developer</span>
+                    </h1>
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif tracking-tight">
-                    <span class="block">Joel Faldín</span>
-                    <span class="block mt-2 text-[#e6c478]">Web Developer</span>
-                </h1>
-            </div>
 
-            <p class="text-xl mb-8 text-zinc-300 leading-relaxed">
-                {translateLabels("hero.desc", {
-                    react: <span class="text-[#e6c478]">React</span>,
-                    typescript: <span class="text-[#e6c478]">TypeScript</span>,
-                    nodejs: <span class="text-[#e6c478]">Node.js</span>
-                })}
-            </p>
+                <p class="text-xl mb-8 text-zinc-300 leading-relaxed">
+                    {translateLabels("hero.desc", {
+                        react: <span class="text-[#e6c478]">React</span>,
+                        typescript: <span class="text-[#e6c478]">TypeScript</span>,
+                        nodejs: <span class="text-[#e6c478]">Node.js</span>
+                    })}
+                </p>
 
-            <div class="flex flex-wrap gap-4">
-                <a href="#projects" class="bg-[#e6c478] hover:bg-[#d4b366] text-[#0a0a14] text-lg px-6 py-2 rounded-md">
-                    <span>{translateLabels("hero.projects")}</span>
-                </a>
-                <a href="https://github.com/JoelFaldin" target="_blank" class="border-[#e6c478] text-[#e6c478] hover:bg-[#e6c478]/10 text-lg px-6 py-2 rounded-md">
-                    {translateLabels("hero.github")}
-                </a>
-            </div>
-
-            <div class="mt-12 grid grid-cols-3 gap-4">
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-[#e6c478]">Full Stack</div>
-                    <div class="text-zinc-400 text-sm">{translateLabels("hero.applications")}</div>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="bg-[#e6c478] hover:bg-[#d4b366] text-[#0a0a14] text-lg px-6 py-2 rounded-md">
+                        <span>{translateLabels("hero.projects")}</span>
+                    </a>
+                    <a href="https://github.com/JoelFaldin" target="_blank" class="border-[#e6c478] text-[#e6c478] hover:bg-[#e6c478]/10 text-lg px-6 py-2 rounded-md">
+                        {translateLabels("hero.github")}
+                    </a>
                 </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-[#e6c478]">Chile</div>
-                    <div class="text-zinc-400 text-sm">{translateLabels("hero.location")}</div>
-                </div>
+
+                <div class="mt-12 grid grid-cols-3 gap-4">
                     <div class="text-center">
-                    <div class="text-3xl font-bold text-[#e6c478]">Jazz</div>
-                    <div class="text-zinc-400 text-sm">{translateLabels("hero.music")}</div>
+                        <div class="text-3xl font-bold text-[#e6c478]">Full Stack</div>
+                        <div class="text-zinc-400 text-sm">{translateLabels("hero.applications")}</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-[#e6c478]">Chile</div>
+                        <div class="text-zinc-400 text-sm">{translateLabels("hero.location")}</div>
+                    </div>
+                        <div class="text-center">
+                        <div class="text-3xl font-bold text-[#e6c478]">Jazz</div>
+                        <div class="text-zinc-400 text-sm">{translateLabels("hero.music")}</div>
+                    </div>
                 </div>
             </div>
-            </div>
 
-            <div class="order-1 md:order-2 flex justify-center">
+            <div class="lg:w-1/2 flex justify-center">
                 <div class="relative">
                     <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-[#e6c478]/20 absolute -top-6 -left-6 animate-pulse" />
                     <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden relative border-2 border-[#e6c478]">
                         <img
                             src="/images/ProfilePic.webp"
-                            alt="John Doe - Web Developer"
+                            alt="Joel Faldín - Web Developer"
                             class="w-full h-full object-cover"
                         />
                     </div>
