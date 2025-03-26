@@ -12,7 +12,7 @@ const lang = Astro.currentLocale || 'en';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Joel's Porfolio | Web Developer and Programmer</title>
+		<title>{lang === 'en' ? "Joel's Porfolio | Web Developer and Programmer" : 'Joel Faldín | Desarrollador Web y Programador'}</title>
 	</head>
 	<body>
 		<Toaster position="bottom-right" reverseOrder={false} client:idle />
