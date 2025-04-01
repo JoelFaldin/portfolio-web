@@ -1,44 +1,12 @@
 ---
+import { db, Projects } from "astro:db";
+
 import type { languageList } from "@/i18n/ui";
 import { useTranslations } from "@/i18n/utils";
 import Github from "./icons/Github.astro";
 import Open from "./icons/Open.astro";
 
-const projects = [
-    {
-        id: 1,
-        title: "BlackSharkWeb",
-        category: "Web",
-        image: "/images/bsw_screenshot.webp",
-        enDescription:
-            "A full-stack e-commerce project built with React, showcasing different services offered by a graphic designer!",
-        esDescription:
-            "Aplicación web full stack tipo e-commerce construido con React, muestra los distintos tipos de servicios que ofrece un diseñador gráfico!",
-        repo: "https://github.com/IgnacioBarraza/BlackSharkWeb"
-    },
-    {
-        id: 2,
-        title: "ConnectDesk",
-        category: "Web",
-        image: "/images/user_admin_screenshot.webp",
-        enDescription:
-            "Web application dashboard that displays user data in a table, featuring user management.",
-        esDescription:
-            "Tabla de contenido interactivo que muestra información sobre usuarios, incluye manejo de usuarios.",
-        repo: "https://github.com/JoelFaldin/ConnectDesk-Frontend"
-    },
-    {
-        id: 3,
-        title: "PomodoroTotoro",
-        category: "Web",
-        image: "/images/pomodoro_totoro_landpage.webp",
-        enDescription:
-            "A NextJS app timer application for studying sessions, with custom audio management.",
-        esDescription:
-            "Aplicación web NextJS dedicada a sesiones de estudio, con gestión de audio customizada.",
-        repo: "https://github.com/JoelFaldin/pomodoro-totoro.git"
-    },
-]
+const projects = await db.select().from(Projects);
 
 const currentLang = Astro.currentLocale || 'en';
 const translateLabels = useTranslations(currentLang as keyof typeof languageList);
