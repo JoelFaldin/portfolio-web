@@ -5,7 +5,7 @@ import Code from "./icons/Code.astro";
 import ArrowDown from "./icons/ArrowDown.astro";
 import ChevronDown from "./icons/ChevronDown.astro";
 
-const currentLang = Astro.currentLocale || 'en';
+const currentLang = Astro.currentLocale || '';
 const translateLabels = useTranslations(currentLang as keyof typeof languageList);
 ---
 

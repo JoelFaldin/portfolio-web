@@ -1,5 +1,5 @@
 export const languageList = {
-    "en": "English",
+    "": "English",
     "es": "Español",
 }
 
