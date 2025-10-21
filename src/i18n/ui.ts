@@ -5,17 +5,17 @@ export const languageList = {
 
 export const contents = {
     en: {
-        "hero.desc": "I build interactive, responsive web applications with passion. Specializing in {react}, {typescript}, and {nodejs} to create interesting experiences.",
+        "hero.desc": "I build interactive, responsive web applications with precission. Specializing in {react}, {typescript}, and {nodejs} to create innovative experiences.",
         "hero.projects": "View Projects",
         "hero.github": "Github Profile",
         "hero.applications": "Applications",
         "hero.location": "Located",
-        "hero.music": "Lover",
+        "hero.music": "User",
         "about.h2": "About",
         "about.dev": "the Dev",
-        "about.desc1": "My name is {name}, and im 22 years old! I started programming 3 years ago, doing basic HTML stuff. Now, result of continuous study, self-improvemenet and growth, I'm building {apps} using a diverse set of technologies!",
+        "about.desc1": "My name is {name}, and im 22 years old! I started programming in 2022, doing basic HTML stuff. Now, result of continuous study, self-improvemenet and growth, I'm building {apps} using a diverse set of technologies!",
         "about.desc2": "I am currently in my {college}, and I have collaborated with my comrades building the BlackSharkWeb project! My role there was to build a backend app to serve the frontend with valuable information.",
-        "about.desc3": "I am also a big fan of jazz! I love programming while listening to this relaxed genre. Could you tell by looking at the page? 🎷",
+        "about.desc3": "I am also a big fan of Linux! I love programming and customizing my development experience.",
         "about.skills": "Skills",
         "about.langs": "Languages",
         "projects.h2": "{projects} section",
@@ -44,7 +44,7 @@ export const contents = {
         "footer.design": "Design by {v0}! Made with ❤️ using Astro! 🚀",
     },
     es: {
-        "hero.desc": "Construyo aplicaciones interactivas y responsivas con pasión. Me especializo en {react}, {typescript}, y {nodejs}. Enfocado en crear experiencias interesantes.",
+        "hero.desc": "Construyo aplicaciones interactivas y responsivas con precisión. Me especializo en {react}, {typescript}, y {nodejs}. Enfocado en crear experiencias innovadoras.",
         "hero.projects": "Ver Proyectos",
         "hero.github": "Perfil de Github",
         "hero.applications": "Apps",
