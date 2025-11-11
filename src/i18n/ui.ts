@@ -53,7 +53,7 @@ export const contents = {
         "footer.projects": "Projects",
         "footer.tech": "Tech Stack",
         "footer.contact": "Contact",
-        "footer.design": "Design by {v0}! Made with ❤️ using Astro! 🚀",
+        "footer.design": "Design by {v0}! Made with ❤️ using {astro}! 🚀",
     },
     es: {
         "hero.desc": "Construyo aplicaciones interactivas y responsivas con precisión. Me especializo en {react}, {typescript}, y {nodejs}. Enfocado en crear experiencias innovadoras.",
@@ -104,6 +104,6 @@ export const contents = {
         "footer.projects": "Proyectos",
         "footer.tech": "Stack",
         "footer.contact": "Contacto",
-        "footer.design": "Diseño por {v0}! Crafteado con ❤️ usando Astro! 🚀"
+        "footer.design": "Diseño por {v0}! Crafteado con ❤️ usando {astro}! 🚀"
     }
 }
