@@ -1,0 +1,47 @@
+---
+import Github from "./icons/Github.astro";
+
+const links = [
+    { label: "about", url: "#about" },
+    { label: "projects", url: "#projects" },
+    { label: "setup", url: "#setup" },
+    { label: "contact", url: "#contact" },
+];
+---
+
+<header
+    class="sticky top-0 z-10 border border-b border-border/60 bg-background/80 backdrop-blur-md"
+>
+    <navbar class="container flex h-14 items-center justify-between px-4">
+        <a
+            href="/"
+            class="font-mono text-sm font-semibold tracking-tight text-foreground"
+        >
+            <span class="text-primary">~/</span>
+            JoelFaldín
+        </a>
+
+        <div class="hidden items-center gap-6 md:flex">
+            {
+                links.map((link) => (
+                    <a
+                        href={link.url}
+                        class="font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                        {link.label}
+                    </a>
+                ))
+            }
+        </div>
+
+        <a
+            href="https://github.com/JoelFaldin"
+            target="_blank"
+            rel="noreferrer"
+            class="flex items-center gap-2 font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
+        >
+            <Github classProp="h-6 w-6" />
+            <span>github</span>
+        </a>
+    </navbar>
+</header>
