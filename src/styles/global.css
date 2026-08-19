@@ -5,5 +5,17 @@
     --color-border: #1f242d;
     --color-background: #0a0d14;
     --color-foreground: #d4d7de;
+    --color-primary-foreground: #0a0d14;
     --color-muted-foreground: #818a98;
+    --color-card: #11151d;
+}
+
+@layer utilities {
+    .grid-bg {
+        background-image: linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+          linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+        background-size: 44px 44px;
+        -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+    }
 }
