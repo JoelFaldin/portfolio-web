@@ -1,5 +1,4 @@
 ---
-import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 ---
 
@@ -12,7 +11,7 @@ import "../styles/global.css";
         <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
     </head>
-    <body>
-        <Navbar />
+    <body class="min-h-screen bg-background">
+        <slot />
     </body>
 </html>
