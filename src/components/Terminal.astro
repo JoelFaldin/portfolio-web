@@ -1,0 +1,127 @@
+---
+const lines = [
+    { type: "command", text: "whoami" },
+    { type: "output", text: "JoelFaldín - web and systems tinkerer" },
+    { type: "command", text: "cat focus.txt" },
+    {
+        type: "output",
+        text: "Learning how computers work by rebuilding the pieces from scratch. Mostly in Go, in my free time.",
+    },
+    { type: "command", text: "ls ~/interests" },
+    {
+        type: "output",
+        text: "networking/ concurrency/ web-development/ linux/",
+    },
+];
+---
+
+<div
+    class="border rounded-lg overflow-hidden font-mono shadow-black/40"
+    data-terminal
+>
+    <div class="flex items-center gap-1.5 px-2.5 py-3.5 bg-secondary">
+        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+        <span class="w-3 h-3 rounded-full bg-gray-500"></span>
+        <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+        <span class="text-sm text-muted-foreground ml-3">JoelF@dev</span>
+    </div>
+
+    <div class="terminal__body" data-terminal-body></div>
+</div>
+
+<script define:vars={{ lines }}>
+    const sleep = (ms) => {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    };
+
+    const typeLine = async (el, text, speed) => {
+        for (const char of text) {
+            el.textContent += char;
+            await sleep(speed);
+        }
+    };
+
+    const runTerminal = async (root) => {
+        const body = root.querySelector("[data-terminal-body]");
+        if (!body) return;
+
+        const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        for (const line of lines) {
+            const p = document.createElement("p");
+            p.className = `terminal__line terminal__line--${line.type}`;
+
+            if (line.type === "command") {
+                const prompt = document.createElement("span");
+                prompt.className = "terminal__prompt";
+                prompt.textContent = "~ $ ";
+                p.appendChild(prompt);
+            }
+
+            const span = document.createElement("span");
+            p.appendChild(span);
+            body.appendChild(p);
+
+            if (reduceMotion) {
+                span.textContent = line.text;
+            } else {
+                await typeLine(span, line.text, line.speed ?? 35);
+            }
+
+            await sleep(line.pause ?? 200);
+        }
+    };
+
+    const initTerminals = () => {
+        console.log(":D");
+        const terminals = document.querySelectorAll("[data-terminal]");
+
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting) {
+                        runTerminal(entry.target);
+                        obs.unobserve(entry.target);
+                    }
+                }
+            },
+            { threshold: 0.3 },
+        );
+
+        terminals.forEach((el) => observer.observe(el));
+    };
+
+    document.addEventListener("astro:page-load", initTerminals);
+</script>
+
+<style>
+    .terminal__body {
+        background-color: var(--color-background);
+        padding: 16px 20px;
+        min-height: 180px;
+        color: #c9d1d9;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .terminal__line {
+        margin: 0 0 4px 0;
+        white-space: pre-wrap;
+    }
+
+    .terminal__line--command {
+        color: #58a6ff;
+    }
+
+    .terminal__line--output {
+        color: #8b949e;
+        padding-left: 1.2em;
+    }
+
+    .terminal_prompt {
+        color: #3fb950;
+        margin-right: 4px;
+    }
+</style>

@@ -8,6 +8,7 @@
     --color-primary-foreground: #0a0d14;
     --color-muted-foreground: #818a98;
     --color-card: #11151d;
+    --color-secondary: #1d212b;
 }
 
 @layer utilities {
