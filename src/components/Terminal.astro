@@ -1,16 +1,18 @@
 ---
 const lines = [
     { type: "command", text: "whoami" },
-    { type: "output", text: "JoelFaldín - web and systems tinkerer" },
+    { type: "output", text: "JoelFaldín - web and systems tinkerer", speed: 0 },
     { type: "command", text: "cat focus.txt" },
     {
         type: "output",
         text: "Learning how computers work by rebuilding the pieces from scratch. Mostly in Go, in my free time.",
+        speed: 0,
     },
     { type: "command", text: "ls ~/interests" },
     {
         type: "output",
         text: "networking/ concurrency/ web-development/ linux/",
+        speed: 0,
     },
 ];
 ---
@@ -53,14 +55,17 @@ const lines = [
             const p = document.createElement("p");
             p.className = `terminal__line terminal__line--${line.type}`;
 
+            const span = document.createElement("span");
+
             if (line.type === "command") {
                 const prompt = document.createElement("span");
-                prompt.className = "terminal__prompt";
+                prompt.className = "text-primary";
                 prompt.textContent = "~ $ ";
                 p.appendChild(prompt);
+            } else {
+                span.className = "text-muted-foreground";
             }
 
-            const span = document.createElement("span");
             p.appendChild(span);
             body.appendChild(p);
 
@@ -75,7 +80,6 @@ const lines = [
     };
 
     const initTerminals = () => {
-        console.log(":D");
         const terminals = document.querySelectorAll("[data-terminal]");
 
         const observer = new IntersectionObserver(
@@ -118,10 +122,5 @@ const lines = [
     .terminal__line--output {
         color: #8b949e;
         padding-left: 1.2em;
-    }
-
-    .terminal_prompt {
-        color: #3fb950;
-        margin-right: 4px;
     }
 </style>
