@@ -1,0 +1,9 @@
+---
+const { section, title } = Astro.props;
+---
+
+<span class="text-sm text-primary font-mono"> ~ $ </span>
+<span class="text-sm text-muted-foreground font-mono">
+    {section}
+</span>
+<h2 class="text-4xl text-foreground font-mono font-bold">{title}</h2>
