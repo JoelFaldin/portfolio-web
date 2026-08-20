@@ -1,5 +1,7 @@
 ---
 import ArrowDown from "./icons/ArrowDown.astro";
+import Email from "./icons/Email.astro";
+import Github from "./icons/Github.astro";
 ---
 
 <section class="relative overflow-hidden">
@@ -11,9 +13,8 @@ import ArrowDown from "./icons/ArrowDown.astro";
                 <p
                     class="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs text-muted-foreground"
                 >
-                    <span class="h-1.5 w-1.5 rounded-full bg-primary"
-                        >available for web / backend / systems work</span
-                    >
+                    <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                    available for web / backend / systems work
                 </p>
 
                 <h1
@@ -42,6 +43,21 @@ import ArrowDown from "./icons/ArrowDown.astro";
                     >
                         view projects
                         <ArrowDown classProp="h-4 w-4" />
+                    </a>
+                    <a
+                        href="#contact"
+                        class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 font-mono text-sm text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                    >
+                        <Email classProp="h-4 w-4" />
+                        get in touch
+                    </a>
+                    <a
+                        href="https://github.com/JoelFaldin"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 font-mono text-sm text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                    >
+                        <Github classProp="h-4 w-4" />
+                        github
                     </a>
                 </div>
             </div>
