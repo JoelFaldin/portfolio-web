@@ -1,0 +1,66 @@
+---
+import ArrowUpRight from "./icons/ArrowUpRight.astro";
+import SectionLabel from "./SectionLabel.astro";
+import { projects } from "../lib/projects";
+---
+
+<section id="projects" class="border-t border-border/60 py-24">
+    <div class="container mx-auto px-4">
+        <SectionLabel
+            section="ls ~/projects"
+            title="Things I build across the stack"
+        />
+
+        <p
+            class="mt-4 max-w-2xl text-pretty leading-relaxed text-muted-foreground"
+        >
+            A mix of web, backend, and systems work - projects where making
+            something useful and understanding how it works go hand in hand.
+        </p>
+
+        <div
+            class="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2"
+        >
+            {
+                projects.map((project) => (
+                    <a
+                        href=""
+                        class="group flex flex-col gap-4 bg-card p-6 transition-colors hover:bg-secondary/50"
+                    >
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 font-mono">
+                                <span class="text-primary">./</span>
+                                <span class="text-lg font-semibold text-foreground">
+                                    {project.name}
+                                </span>
+                            </div>
+                            <ArrowUpRight classProp="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+                        </div>
+
+                        <p class="text-pretty leading-relaxed text-muted-foreground">
+                            {project.desc}
+                        </p>
+
+                        <div class="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
+                            <span class="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground">
+                                <span class="h-1.5 w-1.5 rounded-full bg-primary" />
+                                {project.status}
+                            </span>
+                            <span class="font-mono text-xs text-muted-foreground">
+                                {project.category}
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            {project.stack.map((tech) => (
+                                <span class="rounded border border-border bg-background px-2 py-0.5 font-mono text-xs text-muted-foreground">
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</section>
