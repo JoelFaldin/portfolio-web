@@ -9,6 +9,7 @@
     --color-muted-foreground: #818a98;
     --color-card: #11151d;
     --color-secondary: #1d212b;
+    --color-destructive: #7f1d1d;
 }
 
 @layer utilities {
