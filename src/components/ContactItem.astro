@@ -1,0 +1,24 @@
+---
+const { url, label, content } = Astro.props;
+---
+
+<a
+    href={url}
+    target="_blank"
+    class="group flex items-center gap-4 rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/50"
+>
+    <span
+        class="flex h-11 w-11 items-center justify-center rounded-md bg-secondary text-primary"
+    >
+        <slot />
+    </span>
+    <span class="min-w-0">
+        <span class="block font-mono text-xs text-muted-foreground"
+            >{label}</span
+        >
+        <span
+            class="block truncate font-mono text-foreground transition-colors group-hover:text-primary"
+            >{content}</span
+        >
+    </span>
+</a>

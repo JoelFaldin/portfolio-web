@@ -1,0 +1,37 @@
+---
+import ContactItem from "./ContactItem.astro";
+import Email from "./icons/Email.astro";
+import Github from "./icons/Github.astro";
+import SectionLabel from "./SectionLabel.astro";
+---
+
+<section id="contact" class="border-t border-border/60 py-24">
+    <div class="container mx-auto px-4">
+        <SectionLabel section="./contact" title="Let's talk" />
+
+        <p
+            class="mt-4 max-w-2xl text-pretty leading-relaxed text-muted-foreground"
+        >
+            I'm always up for talking about systems, low-level Go, or an
+            interesting backend project. If you're hiring for systems /
+            infrastructure work - or just want to share ideas - reach out.
+        </p>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+            <ContactItem
+                url="mailto:joelfaldin@gmail.com"
+                label="email"
+                content="joelfaldin@gmail.com"
+            >
+                <Email classProp="w-4 h-4" />
+            </ContactItem>
+            <ContactItem
+                url="https://github.com/JoelFaldin"
+                label="github"
+                content="github.com/JoelFaldin"
+            >
+                <Github classProp="w-4 h-4" />
+            </ContactItem>
+        </div>
+    </div>
+</section>
