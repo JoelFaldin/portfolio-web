@@ -6,6 +6,7 @@ import HeroSection from "../components/HeroSection.astro";
 import Navbar from "../components/Navbar.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
 import SetupSection from "../components/SetupSection.astro";
+import Terminal from "../components/Terminal.svelte";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -17,4 +18,5 @@ import Layout from "../layouts/Layout.astro";
     <SetupSection />
     <ContactSection />
     <Footer />
+    <Terminal client:visible />
 </Layout>
