@@ -2,7 +2,7 @@
 import ArrowDown from "./icons/ArrowDown.astro";
 import Email from "./icons/Email.astro";
 import Github from "./icons/Github.astro";
-import Terminal from "./Terminal.astro";
+import Terminal from "./Terminal.svelte";
 ---
 
 <section class="relative overflow-hidden">
@@ -63,7 +63,8 @@ import Terminal from "./Terminal.astro";
                 </div>
             </div>
 
-            <Terminal />
+            <!-- <Terminal /> -->
+            <Terminal client:visible />
         </div>
     </div>
 </section>

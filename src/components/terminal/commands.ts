@@ -3,7 +3,7 @@ export type CommandOutput = string[] | { type: 'component'; name: string };
 export const commands: Record<string, () => CommandOutput> = {
   whoami: () => ['JoelFaldín - web & systems developer'],
   help: () => Object.keys(commands).map(c => `  ${c}`),
-  abour: () => [
+  about: () => [
     'Full Stack developer exploring systems and networking.',
     'I like to understand what is going on underneath the services I use.'
   ],

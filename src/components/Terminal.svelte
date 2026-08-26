@@ -4,7 +4,9 @@ import { runCommand } from './terminal/commands';
 type HistoryEntry = { command: string, output: string[] };
 
 let history = $state<HistoryEntry[]>([
-  { command: '', output: ['Welcome. Type "help" to get started.'] }
+  { command: 'whoami', output: ['Joel Faldín - web and systems developer'] },
+  { command: 'cat focus.txt', output: ['Learning how computers work by rebuilding the pieces from scratch. Mostly in Go, in my free time.'] },
+  { command: 'ls ~/interests', output: ['networking/ concurrenct/ web-development/ linux/'] }
 ])
 let currentInput = $state('');
 let inputEl: HTMLInputElement;
@@ -56,28 +58,38 @@ function handleArrows(e: KeyboardEvent) {
 </script>
 
 <div
-    class=""
+    class="border rounded-lg overflow-hidden font-mono shadow-black/40"
     bind:this={scrollEl}
 >
-    {#each history as entry}
-        {#if entry.command}
-            <div>
-                <span>guest@portfolio:~$</span> {entry.command}
-            </div>
-        {/if}
-        {#each entry.output as line}
-            <div>{line}</div>
-        {/each}
-    {/each}
+    <div class="flex items-center gap-1.5 px-2.5 py-3.5 bg-secondary">
+        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+        <span class="w-3 h-3 rounded-full bg-gray-500"></span>
+        <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+        <span class="text-sm text-muted-foreground ml-3">JoelF@dev</span>
+    </div>
 
-    <div>
-        <span>guest@portfolio:~$</span>
-        <input
-            bind:this={inputEl}
-            bind:value={currentInput}
-            onkeydown={(e) => { handleSubmit(e); handleArrows(e); }}
-            spellcheck="false"
-            autocomplete="off"
-        >
+    <div class="p-2">
+        {#each history as entry}
+            {#if entry.command}
+                <div class="text-foreground">
+                    <span class="text-primary">guest@portfolio:~$</span> {entry.command}
+                </div>
+            {/if}
+            {#each entry.output as line}
+                <div class="text-muted-foreground">{line}</div>
+            {/each}
+        {/each}
+
+        <div>
+            <span class="text-primary">guest@portfolio:~$</span>
+            <input
+                bind:this={inputEl}
+                bind:value={currentInput}
+                onkeydown={(e) => { handleSubmit(e); handleArrows(e); }}
+                spellcheck="false"
+                autocomplete="off"
+                class="text-foreground"
+            >
+        </div>
     </div>
 </div>
