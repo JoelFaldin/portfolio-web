@@ -7,6 +7,22 @@ export const commands: Record<string, () => CommandOutput> = {
     'Full Stack developer exploring systems and networking.',
     'I like to understand what is going on underneath the services I use.'
   ],
+  skills: () => [
+    'React, Next, Angular, Astro, Vue',
+    'Express, NestJS, Java',
+    'TypeScript, Go',
+  ],
+  projects: () => [
+    'BlackSharkWeb',
+    'ConnectDesk',
+    'godiff',
+    'gg',
+    'mux-demo'
+  ],
+  contact: () => [
+    'joelfaldin@gmail.com',
+    'https://github.com/JoelFaldin'
+  ],
   clear: () => [],
 }
 
