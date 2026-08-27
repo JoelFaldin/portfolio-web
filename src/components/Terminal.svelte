@@ -1,4 +1,5 @@
 <script lang="ts">
+import { tick } from 'svelte';
 import { runCommand } from './terminal/commands';
 
 type HistoryEntry = { command: string, output: string[] };
@@ -9,14 +10,22 @@ let history = $state<HistoryEntry[]>([
   { command: 'ls ~/interests', output: ['networking/ concurrenct/ web-development/ linux/'] }
 ])
 let currentInput = $state('');
-let inputEl: HTMLInputElement;
 let scrollEl: HTMLDivElement;
+let inputEl: HTMLInputElement;
 
 let isTyping: boolean = $state(false);
 let typingTimeout: ReturnType<typeof setTimeout>;
 
 let commandLog: string[] = $state([]);
 let historyIndex = $state(-1);
+
+$effect(() => {
+  history.length;
+
+  tick().then(() => {
+    scrollEl.scrollTo({ top: scrollEl.scrollHeight, behavior: 'smooth' });
+  })
+})
 
 function handleSubmit(e: KeyboardEvent) {
   if (e.key != "Enter") return;
@@ -72,7 +81,6 @@ function handleType() {
 
 <div
     class="border rounded-lg overflow-hidden font-mono shadow-black/40"
-    bind:this={scrollEl}
 >
     <div class="flex items-center gap-1.5 px-2.5 py-3.5 bg-secondary">
         <span class="w-3 h-3 rounded-full bg-red-500"></span>
@@ -81,7 +89,7 @@ function handleType() {
         <span class="text-sm text-muted-foreground ml-3">JoelF@dev</span>
     </div>
 
-    <div class="px-4 py-5 bg-background">
+    <div class="px-4 py-5 bg-background h-60 overflow-y-auto" bind:this={scrollEl}>
         {#each history as entry}
             {#if entry.command}
                 <div class="text-foreground">
@@ -102,7 +110,8 @@ function handleType() {
                 oninput={handleType}
                 spellcheck="false"
                 autocomplete="off"
-                class="flex-1 bg-transparent border-none outline-none font-mono text-inherit caret-terminal"
+                class="flex-1 bg-transparent border-none outline-none font-mono text-inherit caret-terminal cursor-typing"
+                class:typing={isTyping}
             >
         </div>
     </div>
@@ -112,6 +121,11 @@ function handleType() {
     .caret-terminal {
         caret-color: var(--color-primary);
         animation: blink 1s step-end infinite;
+    }
+
+    .cursor-typing.typing {
+        animation: none;
+        opacity: 1;
     }
 
     @keyframes blink {
