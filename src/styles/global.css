@@ -14,8 +14,8 @@
 
 @layer utilities {
     .grid-bg {
-        background-image: linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
-          linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+        background-image: linear-gradient(color-mix(in srgb, var(--color-border) 50%, transparent) 1px, transparent 1px),
+          linear-gradient(90deg, color-mix(in srgb, var(--color-border) 50%, transparent) 1px, transparent 1px);
         background-size: 44px 44px;
         -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
         mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);

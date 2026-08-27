@@ -80,7 +80,7 @@ function handleType() {
 </script>
 
 <div
-    class="border rounded-lg overflow-hidden font-mono shadow-black/40"
+    class="border border-border rounded-lg overflow-hidden font-mono shadow-black/40"
 >
     <div class="flex items-center gap-1.5 px-2.5 py-3.5 bg-secondary">
         <span class="w-3 h-3 rounded-full bg-red-500"></span>
