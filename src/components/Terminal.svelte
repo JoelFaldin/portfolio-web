@@ -12,6 +12,9 @@ let currentInput = $state('');
 let inputEl: HTMLInputElement;
 let scrollEl: HTMLDivElement;
 
+let isTyping: boolean = $state(false);
+let typingTimeout: ReturnType<typeof setTimeout>;
+
 let commandLog: string[] = $state([]);
 let historyIndex = $state(-1);
 
@@ -55,6 +58,16 @@ function handleArrows(e: KeyboardEvent) {
     }
   }
 }
+
+function handleType() {
+  isTyping = true;
+
+  clearTimeout(typingTimeout);
+
+  typingTimeout = setTimeout(() => {
+    isTyping = false;
+  }, 500)
+}
 </script>
 
 <div
@@ -68,11 +81,11 @@ function handleArrows(e: KeyboardEvent) {
         <span class="text-sm text-muted-foreground ml-3">JoelF@dev</span>
     </div>
 
-    <div class="p-2">
+    <div class="px-4 py-5 bg-background">
         {#each history as entry}
             {#if entry.command}
                 <div class="text-foreground">
-                    <span class="text-primary">guest@portfolio:~$</span> {entry.command}
+                    <span class="text-primary">~$</span> {entry.command}
                 </div>
             {/if}
             {#each entry.output as line}
@@ -80,16 +93,29 @@ function handleArrows(e: KeyboardEvent) {
             {/each}
         {/each}
 
-        <div>
-            <span class="text-primary">guest@portfolio:~$</span>
+        <div class="text-foreground">
+            <span class="text-primary">~$</span>
             <input
                 bind:this={inputEl}
                 bind:value={currentInput}
                 onkeydown={(e) => { handleSubmit(e); handleArrows(e); }}
+                oninput={handleType}
                 spellcheck="false"
                 autocomplete="off"
-                class="text-foreground"
+                class="flex-1 bg-transparent border-none outline-none font-mono text-inherit caret-terminal"
             >
         </div>
     </div>
 </div>
+
+<style>
+    .caret-terminal {
+        caret-color: var(--color-primary);
+        animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+        0%, 50% { caret-color: var(--color-primary) }
+        50.01%, 100% { caret-color: transparent }
+    }
+</style>
