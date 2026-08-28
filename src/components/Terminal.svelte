@@ -10,7 +10,7 @@ let history = $state<HistoryEntry[]>([
   { command: 'ls ~/interests', output: ['networking/ concurrenct/ web-development/ linux/'] }
 ])
 let currentInput = $state('');
-let scrollEl: HTMLDivElement;
+let scrollEl: HTMLLabelElement;
 let inputEl: HTMLInputElement;
 
 let isTyping: boolean = $state(false);
@@ -89,7 +89,7 @@ function handleType() {
         <span class="text-sm text-muted-foreground ml-3">JoelF@dev</span>
     </div>
 
-    <div class="px-4 py-5 bg-background h-72 overflow-y-auto" bind:this={scrollEl}>
+    <label for="commandId" class="block px-4 py-5 bg-background h-72 overflow-y-auto" bind:this={scrollEl}>
         {#each history as entry}
             {#if entry.command}
                 <div class="text-foreground">
@@ -111,20 +111,23 @@ function handleType() {
             {/each}
         {/each}
 
-        <div class="text-foreground">
+        <div class="flex flex-row gap-2 text-foreground">
             <span class="text-primary">~$</span>
+            <!-- svelte-ignore a11y_autofocus -->
             <input
+                id="commandId"
                 bind:this={inputEl}
                 bind:value={currentInput}
                 onkeydown={(e) => { handleSubmit(e); handleArrows(e); }}
                 oninput={handleType}
                 spellcheck="false"
                 autocomplete="off"
-                class="flex-1 bg-transparent border-none outline-none font-mono text-inherit caret-terminal cursor-typing"
+                autofocus
+                class="bg-transparent w-full border-none outline-none font-mono text-inherit caret-terminal cursor-typing"
                 class:typing={isTyping}
             >
         </div>
-    </div>
+    </label>
 </div>
 
 <style>
