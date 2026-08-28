@@ -1,8 +1,8 @@
 <script lang="ts">
 import { tick } from 'svelte';
-import { runCommand } from './terminal/commands';
+import { runCommand, type CommandOutput } from './terminal/commands';
 
-type HistoryEntry = { command: string, output: string[] };
+type HistoryEntry = { command: string, output: CommandOutput };
 
 let history = $state<HistoryEntry[]>([
   { command: 'whoami', output: ['Joel Faldín - web and systems developer'] },
@@ -97,7 +97,17 @@ function handleType() {
                 </div>
             {/if}
             {#each entry.output as line}
-                <div class="text-muted-foreground">{line}</div>
+                {#if typeof line === 'string'}
+                    <div class="text-muted-foreground">{line}</div>
+                {:else if line.type === 'link'}
+                    <div class="text-muted-foreground">
+                        <a href={line.url} target="_blank" rel="noopener noreferrer" class="text-primary underline">
+                            {line.content}
+                        </a>
+                    </div>
+                {:else}
+                    <div class="text-muted-foreground">{line.content}</div>
+                {/if}
             {/each}
         {/each}
 
