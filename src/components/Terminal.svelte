@@ -89,7 +89,7 @@ function handleType() {
         <span class="text-sm text-muted-foreground ml-3">JoelF@dev</span>
     </div>
 
-    <label for="commandId" class="block px-4 py-5 bg-background h-72 overflow-y-auto" bind:this={scrollEl}>
+    <label for="commandId" class="block px-4 py-5 bg-card h-72 overflow-y-auto" bind:this={scrollEl}>
         {#each history as entry}
             {#if entry.command}
                 <div class="text-foreground">
