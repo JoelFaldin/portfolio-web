@@ -1,12 +1,6 @@
 ---
+import { navbarLinks } from "./contants/constants";
 import Github from "./icons/Github.astro";
-
-const links = [
-    { label: "about", url: "#about" },
-    { label: "projects", url: "#projects" },
-    { label: "setup", url: "#setup" },
-    { label: "contact", url: "#contact" },
-];
 ---
 
 <header
@@ -23,7 +17,7 @@ const links = [
 
         <div class="hidden items-center gap-6 md:flex">
             {
-                links.map((link) => (
+                navbarLinks.map((link) => (
                     <a
                         href={link.url}
                         class="font-mono text-sm text-muted-foreground transition-colors hover:text-primary"

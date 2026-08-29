@@ -36,3 +36,10 @@ export const stack = [
     techs: ["Golang", "Linux", "TCP/IP"],
   }
 ]
+
+export const navbarLinks = [
+    { label: "about", url: "#about" },
+    { label: "projects", url: "#projects" },
+    { label: "stack", url: "#stack" },
+    { label: "contact", url: "#contact" },
+];
