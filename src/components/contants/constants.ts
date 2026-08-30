@@ -7,12 +7,12 @@ export const timeline = [
     {
         period: "the connection",
         title: "Internal workings",
-        body: "The web keeps leading me toward deeper questions - how requests travel, how concurrency behaves, and what a database does under pressure. Systems work gives those questions a practical home.",
+        body: "Web development keeps leading me toward deeper questions - how requests travel, how concurrency behaves, and what a database does under pressure. Systems work gives those questions a practical home.",
     },
     {
         period: "alongside",
-        title: "Systems programming",
-        body: "In my free time I explore the fundamentals of networking and systems using Go. These projects make the services and products I build more deliberate, not separate from them.",
+        title: "Networking and systems",
+        body: "In my free time I explore how systems communicate: protocols, concurrency, storage and distributed behavior. The focus is understanding the network systems behind the products I build.",
     },
 ];
 
@@ -20,7 +20,7 @@ export const stack = [
   {
     label: "Interface",
     title: "Web Experience",
-    desc: "Clear, responsive products with a frontend that gets out of the way.",
+    desc: "Clear, responsive products with a frontend that gets the job done.",
     techs: ["TypeScript", "React", "Next.js", "Vue", "Angular"],
   },
   {
