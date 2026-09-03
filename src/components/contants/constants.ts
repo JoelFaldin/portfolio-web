@@ -1,21 +1,3 @@
-export const timeline = [
-    {
-        period: "one side",
-        title: "Web development",
-        body: "I build full stack applications using modern technologies. Focused on clean interfaces and scalable backends.",
-    },
-    {
-        period: "the connection",
-        title: "Internal workings",
-        body: "Web development keeps leading me toward deeper questions - how requests travel, how concurrency behaves, and what a database does under pressure. Systems work gives those questions a practical home.",
-    },
-    {
-        period: "alongside",
-        title: "Networking and systems",
-        body: "In my free time I explore how systems communicate: protocols, concurrency, storage and distributed behavior. The focus is understanding the network systems behind the products I build.",
-    },
-];
-
 export const stack = [
   {
     label: "Interface",
