@@ -1,4 +1,5 @@
 ---
+import { capabilities } from "./contants/constants";
 import ArrowDown from "./icons/ArrowDown.astro";
 import Email from "./icons/Email.astro";
 import Github from "./icons/Github.astro";
@@ -62,6 +63,25 @@ import Terminal from "./Terminal.svelte";
                         <Github classProp="h-4 w-4" />
                         github
                     </a>
+                </div>
+
+                <div
+                    class="mt-12 grid max-w-xl gap-3 border-t border-border/70 pt-5 sm:grid-cols-3"
+                >
+                    {
+                        capabilities.map((cap) => (
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary">
+                                    {cap.label}
+                                </div>
+                                {cap.values.map((val) => (
+                                    <p class="font-mono text-xs leading-relaxed text-muted-foreground">
+                                        {val}
+                                    </p>
+                                ))}
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 

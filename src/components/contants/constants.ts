@@ -1,3 +1,9 @@
+export const capabilities = [
+  { label: "Frontend", values: ["React", "Angular", "Vue"] },
+  { label: "Backend", values: ["Express", "NestJS", "Java Springboot"] },
+  { label: "Networking", values: ["Linux", "TCP/IP", "Protocols"] }
+]
+
 export const stack = [
   {
     label: "Interface",
