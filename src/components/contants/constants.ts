@@ -1,7 +1,7 @@
 export const capabilities = [
-  { label: "Frontend", values: ["React", "Angular", "Vue"] },
-  { label: "Backend", values: ["Express", "NestJS", "Java Springboot"] },
-  { label: "Networking", values: ["Linux", "TCP/IP", "Protocols"] }
+  { label: "Frontend", values: "React · Angular · Vue" },
+  { label: "Backend", values: "Express · NestJS · Java Springboot" },
+  { label: "Networking", values: "Linux · TCP/IP · Protocols" }
 ]
 
 export const stack = [
@@ -35,6 +35,9 @@ export const navbarLinks = [
 export const experience = [
   {
     company: "procontacto",
+    status: "Current Role",
+    position: "Software Engineer",
+    description: "Building and integrating software around Salesforce, connecting customer data and business processes to reliable tools used every day.",
     details: [
       { label: "company", content: "ProContacto" },
       { label: "location", content: "Santiago, Chile" },

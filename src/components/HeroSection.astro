@@ -9,7 +9,7 @@ import Terminal from "./Terminal.svelte";
 <section class="relative overflow-hidden">
     <div class="pointer-events-none absolute inset-0 grid-bg" aria-hidden></div>
 
-    <div class="container mx-auto relative px-4 pb-20 pt-20 md:pb-40 md:pt-40">
+    <div class="container mx-auto relative px-4 pb-20 pt-10 md:pb-40 md:pt-30">
         <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
             <div>
                 <p
@@ -66,19 +66,17 @@ import Terminal from "./Terminal.svelte";
                 </div>
 
                 <div
-                    class="mt-12 grid max-w-xl gap-3 border-t border-border/70 pt-5 sm:grid-cols-3"
+                    class="mt-12 grid max-w-xl gap-3 border-t border-border/70 pt-5 grid-cols-1 sm:grid-cols-3"
                 >
                     {
                         capabilities.map((cap) => (
-                            <div class="space-y-1">
+                            <div class="my-2">
                                 <div class="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary">
                                     {cap.label}
                                 </div>
-                                {cap.values.map((val) => (
-                                    <p class="font-mono text-xs leading-relaxed text-muted-foreground">
-                                        {val}
-                                    </p>
-                                ))}
+                                <p class="font-mono text-xs leading-relaxed text-muted-foreground">
+                                    {cap.values}
+                                </p>
                             </div>
                         ))
                     }
