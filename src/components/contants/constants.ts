@@ -31,3 +31,15 @@ export const navbarLinks = [
     { label: "stack", url: "#stack" },
     { label: "contact", url: "#contact" },
 ];
+
+export const experience = [
+  {
+    company: "procontacto",
+    details: [
+      { label: "company", content: "ProContacto" },
+      { label: "location", content: "Santiago, Chile" },
+      { label: "period", content: "May 2026 - present" },
+      { label: "mode", content: "Remote" },
+    ],
+  }
+]

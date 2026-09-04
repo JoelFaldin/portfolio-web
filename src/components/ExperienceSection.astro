@@ -1,0 +1,54 @@
+---
+import { experience } from "./contants/constants";
+import SectionLabel from "./SectionLabel.astro";
+---
+
+<section id="experience" class="border-t border-border/60 py-24">
+    <div class="container mx-auto px-4">
+        <SectionLabel section="cat experience.log" title="Work Experience" />
+
+        <div class="flex flex-col">
+            <div
+                class="my-12 p-5 border border-border bg-card flex flex-row justify-between"
+            >
+                <div>
+                    <p
+                        class="text-sm text-primary font-mono uppercase tracking-widest"
+                    >
+                        Current Role
+                    </p>
+                    <h3
+                        class="mt-3 text-2xl text-foreground font-mono font-bold"
+                    >
+                        Software Engineer
+                    </h3>
+                    <p
+                        class="mt-5 border-t border-border pt-5 text-muted-foreground max-w-xl"
+                    >
+                        Building and integrating software around <span
+                            class="font-bold text-foreground">Salesforce</span
+                        >, connecting customer data and business processes to
+                        reliable tools used every day.
+                    </p>
+                </div>
+                {
+                    experience.map((exp) => (
+                        <dl class="grid grid-cols-2 gap-x-10 font-mono text-sm text-leading-6 md:text-right">
+                            {exp.details.map((d) => (
+                                <div>
+                                    <dt class="text-primary lowercase leading-loose">
+                                        {d.label}
+                                    </dt>
+                                    <dd class="text-muted-foreground leading-loose">
+                                        {d.content}
+                                    </dd>
+                                </div>
+                            ))}
+                        </dl>
+                    ))
+                }
+            </div>
+        </div>
+        <div></div>
+    </div>
+</section>
