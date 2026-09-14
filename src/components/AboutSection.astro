@@ -7,55 +7,56 @@ import SectionLabel from "./SectionLabel.astro";
         <SectionLabel section="cat about.md" title="A little about me" />
 
         <div class="mt-14 flex flex-col lg:flex-row gap-10">
-            <div
-                class="relative aspect-4/3 w-full max-w-lg max-h-full mx-auto overflow-hidden border border-border bg-secondary/20 font-mono text-xs text-muted-foreground"
-            >
-                <div
-                    class="absolute inset-4 border border-dashed border-primary/40"
-                >
-                </div>
-                <span class="absolute left-3 top-3 h-1.5 w-1.5 bg-primary"
-                ></span>
-                <span class="absolute right-3 bottom-3 h-1.5 w-1.5 bg-primary"
-                ></span>
+            <div class="relative aspect-4/3 w-full max-w-lg max-h-full mx-auto overflow-hidden border border-border bg-secondary/20 font-mono text-xs text-muted-foreground">
+                <div class="absolute inset-4 border border-dashed border-primary/40"></div>
+                <span class="absolute left-3 top-3 h-1.5 w-1.5 bg-primary"></span>
+                <span class="absolute right-3 bottom-3 h-1.5 w-1.5 bg-primary"></span>
 
                 <img
                     src="images/profile_pic.webp"
                     alt="Profile picture"
                     class="absolute border border-primary inset-0 h-full w-full object-cover"
+                    fetchpriority="high"
                 />
             </div>
             <div class="flex flex-col gap-8 lg:pt-2">
-                <span
-                    class="max-w-2xl text-pretty text-xl text-foreground leading-relaxed font-mono font-bold"
-                >
-                    I started building interfaces.<br />
-                    Now, I'm learning about what happens when the request leaves the
-                    browser.
+                <span class="max-w-2xl text-pretty text-xl text-foreground leading-relaxed font-mono font-bold">
+                    I started building interfaces.
+                    <br />
+                    Now, I'm learning about what happens when the request leaves
+                    the browser.
                 </span>
-                <div
-                    class="max-w-2xl space-y-5 text-pretty text-md text-muted-foreground leading-relaxed font-mono"
-                >
+                <div class="max-w-2xl space-y-5 text-pretty text-md text-muted-foreground leading-relaxed font-mono">
                     <p>
-                        My day-to-day work is at a <span
-                            class="font-bold text-foreground">Salesforce</span
-                        > company, where I help build and improve web platforms around
-                        the Salesforce ecosystem. It's a space that keeps me close
-                        to both <span class="font-bold text-foreground"
-                            >product thinking</span
-                        > and the <span class="font-bold text-foreground"
-                            >practical details</span
-                        > of reliable software.
+                        My day-to-day work is at a{" "}
+                        <span class="font-bold text-foreground">
+                            Salesforce
+                        </span>{" "}
+                        company, where I help build and improve web platforms
+                        around the Salesforce ecosystem. It's a space that keeps
+                        me close to both{" "}
+                        <span class="font-bold text-foreground">
+                            product thinking
+                        </span>{" "}
+                        and the{" "}
+                        <span class="font-bold text-foreground">
+                            practical details
+                        </span>{" "}
+                        of reliable software.
                     </p>
                     <p>
-                        Outside work, I <span class="font-bold text-foreground"
-                            >follow those details</span
-                        > deeper: learning how networks move information, how systems
-                        behave under preasure, and how engineering connects the two.
-                        I enjoy when I can turn a question into a <span
-                            class="font-bold text-foreground"
-                            >small project</span
-                        > and leave with a better mental model.
+                        Outside work, I{" "}
+                        <span class="font-bold text-foreground">
+                            follow those details
+                        </span>{" "}
+                        deeper: learning how networks move information, how
+                        systems behave under preasure, and how engineering
+                        connects the two. I enjoy when I can turn a question
+                        into a{" "}
+                        <span class="font-bold text-foreground">
+                            small project
+                        </span>{" "}
+                        and leave with a better mental model.
                     </p>
                 </div>
             </div>
