@@ -47,7 +47,7 @@ export const projects: Project[] = [
     status: "finished",
     stack: ["Go", "net/TCP", "goroutines"],
     repo: "https://github.com/JoelFaldin/mux-demo",
-    image: "",
+    image: "/images/mux-demo-protocol.webp",
     category: "networking"
  }
 ]
