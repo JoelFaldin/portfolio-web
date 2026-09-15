@@ -19,7 +19,7 @@ import { projects } from "../lib/projects";
         <div class="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-2">
             {projects.map((project) => (
                 <a
-                    href=""
+                    href={project.repo}
                     class="group flex flex-col gap-4 bg-card p-6 transition-colors hover:bg-secondary/50"
                 >
                     <div class="flex items-center justify-between">
