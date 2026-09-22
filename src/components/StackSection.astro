@@ -1,0 +1,44 @@
+---
+import { stack } from "./contants/constants";
+import SectionLabel from "./SectionLabel.astro";
+import StackItem from "./StackItem.astro";
+---
+
+<section id="stack" class="border-t border-border/60 py-24">
+    <div class="container mx-auto px-4">
+        <SectionLabel section="cat stack.md" title="What I work with" />
+
+        <div class="flex flex-col lg:flex-row justify-between md:items-end">
+            <p class="mt-4 text-muted-foreground max-w-2xl text-pretty">
+                A stack that moves from the browser to network bytes. I like
+                knowing what each layer is responsible for - and how they speak
+                to each other.
+            </p>
+
+            <span
+                class="flex flex-row items-center gap-2 text-muted-foreground"
+            >
+                <div class="h-2 w-2 bg-primary rounded-full"></div>
+                <span class="tracking-widest text-sm">
+                    web + backend + systems
+                </span>
+            </span>
+        </div>
+
+        <div
+            class="mt-12 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3"
+        >
+            {
+                stack.map((item, index) => (
+                    <StackItem
+                        index={index + 1}
+                        label={item.label}
+                        title={item.title}
+                        desc={item.desc}
+                        techs={item.techs}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,117 +1,126 @@
 ---
-import { languageList } from "@/i18n/ui";
-import { useTranslations } from "@/i18n/utils";
-import Code from "./icons/Code.astro";
+import { capabilities } from "./contants/constants";
 import ArrowDown from "./icons/ArrowDown.astro";
-import ChevronDown from "./icons/ChevronDown.astro";
-
-const currentLang = Astro.currentLocale || '';
-const translateLabels = useTranslations(currentLang as keyof typeof languageList);
+import Email from "./icons/Email.astro";
+import Github from "./icons/Github.astro";
+import Terminal from "./Terminal.svelte";
 ---
 
-<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute top-6 right-6 z-20 flex items-center">
-        <div class="relative flex flex-row gap-x-2">
-            <select
-                class="appearance-none bg-[#0a0a14] border border-[#e6c478]/30 text-[#e6c478] rounded-md py-2 pl-3 pr-8 focus:outline-none focus:ring-2 focus:ring-[#e6c478]/50 focus:border-[#e6c478] text-sm"
-                onchange="location = this.value;"
-            >
-                {Object.entries(languageList).map(([key, label]) => (
-                    <option value={`/${key}`} selected={currentLang === key}>
-                        {label}
-                    </option>
-                ))}
-            </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#e6c478]">
-                <ChevronDown class="h-4 w-4" />
-            </div>
-        </div>
-    </div>
+<section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 grid-bg" aria-hidden></div>
 
-    <div
-        class="absolute inset-0 bg-cover bg-center"
-    >
-        <div class="absolute inset-0 bg-[#0f0f1a]/98"></div>
-    </div>
-
-    <div class="px-4 z-10 py-20 mt-5">
-        <div class="flex sm:flex-row flex-col-reverse gap-12 items-center">
-            <div class="lg:w-1/2">
-                <div class="mb-6">
-                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-[#e6c478]/10 text-[#e6c478] text-sm font-medium mb-4">
-                        <Code class="w-4 h-4 mr-2" />
-                        Full Stack Developer
-                    </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-serif tracking-tight">
-                        <span class="block">Joel Faldín</span>
-                        <span class="block mt-2 text-[#e6c478]">Web Developer</span>
-                    </h1>
-                </div>
-
-                <p class="text-xl mb-8 text-zinc-300 leading-relaxed">
-                    {translateLabels("hero.desc", {
-                        react: <span class="text-[#e6c478]">React</span>,
-                        typescript: <span class="text-[#e6c478]">TypeScript</span>,
-                        nodejs: <span class="text-[#e6c478]">Node.js</span>
-                    })}
+    <div class="container mx-auto relative px-4 pb-20 pt-10 md:pb-40 md:pt-30">
+        <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
+            <div>
+                <p
+                    class="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs text-muted-foreground"
+                >
+                    Software Engineer
                 </p>
 
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="bg-[#e6c478] hover:bg-[#d4b366] text-[#0a0a14] text-lg px-6 py-2 rounded-md">
-                        <span>{translateLabels("hero.projects")}</span>
+                <h1
+                    class="text-balance font-mono text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl"
+                >
+                    <span>Joel </span>
+                    <span aria-hidden="true">
+                        Fald<span class="i-wrap text-primary">
+                            <span class="i-stem">í</span>
+                            <span class="i-accent">í</span>
+                        </span>n
+                    </span>
+                </h1>
+
+                <p
+                    class="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground"
+                >
+                    Working across interfaces, services and networks that
+                    connects them. I use <span class="font-bold text-foreground"
+                        >TypeScript</span
+                    > to shape web experiences and explore how requests, protocols
+                    and systems keep them moving.
+                </p>
+
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a
+                        href="#projects"
+                        class="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 font-mono text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                    >
+                        view projects
+                        <ArrowDown classProp="h-4 w-4" />
                     </a>
-                    <a href="https://github.com/JoelFaldin" target="_blank" class="border-[#e6c478] text-[#e6c478] hover:bg-[#e6c478]/10 text-lg px-6 py-2 rounded-md">
-                        {translateLabels("hero.github")}
+                    <a
+                        href="#contact"
+                        class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 font-mono text-sm text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                    >
+                        <Email classProp="h-4 w-4" />
+                        get in touch
+                    </a>
+                    <a
+                        href="https://github.com/JoelFaldin"
+                        target="_blank"
+                        class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 font-mono text-sm text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                    >
+                        <Github classProp="h-4 w-4" />
+                        github
                     </a>
                 </div>
 
-                <div class="mt-12 grid grid-cols-3 gap-4">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-[#e6c478]">Full Stack</div>
-                        <div class="text-zinc-400 text-sm">{translateLabels("hero.applications")}</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-[#e6c478]">Chile</div>
-                        <div class="text-zinc-400 text-sm">{translateLabels("hero.location")}</div>
-                    </div>
-                        <div class="text-center">
-                        <div class="text-3xl font-bold text-[#e6c478]">Linux</div>
-                        <div class="text-zinc-400 text-sm">{translateLabels("hero.music")}</div>
-                    </div>
+                <div
+                    class="mt-12 grid max-w-xl gap-3 border-t border-border/70 pt-5 grid-cols-1 sm:grid-cols-3"
+                >
+                    {
+                        capabilities.map((cap) => (
+                            <div class="my-2">
+                                <div class="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary">
+                                    {cap.label}
+                                </div>
+                                <p class="font-mono text-xs leading-relaxed text-muted-foreground">
+                                    {cap.values}
+                                </p>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 
-            <div class="lg:w-1/2 flex justify-center">
-                <div class="relative">
-                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-[#e6c478]/20 absolute -top-6 -left-6 animate-pulse" />
-                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden relative border-2 border-[#e6c478]">
-                        <img
-                            src="/images/ProfilePic.webp"
-                            alt="Joel Faldín - Web Developer"
-                            class="w-full h-full object-cover"
-                        />
-                    </div>
-                    <div class="absolute -bottom-4 -right-4 bg-[#0a0a14] p-4 rounded-full border border-[#e6c478]">
-                        <Code class="w-10 h-10 text-[#e6c478]" />
-                    </div>
-
-                    <div class="absolute -top-2 -right-2 bg-[#0a0a14] py-1 px-3 rounded-full border border-[#e6c478] text-[#e6c478] text-sm font-medium">
-                        React
-                    </div>
-                    <div class="absolute top-1/4 -right-4 bg-[#0a0a14] py-1 px-3 rounded-full border border-[#e6c478] text-[#e6c478] text-sm font-medium">
-                        Next.js
-                    </div>
-                    <div class="absolute bottom-1/4 -right-6 bg-[#0a0a14] py-1 px-3 rounded-full border border-[#e6c478] text-[#e6c478] text-sm font-medium">
-                        TypeScript
-                    </div>
-                </div>
-            </div>
+            <Terminal client:visible />
         </div>
     </div>
-
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#about">
-            <ArrowDown class="w-10 h-10 text-[#e6c478]" />
-        </a>
-    </div>
 </section>
+
+<style>
+    .i-wrap {
+        position: relative;
+        display: inline-block;
+    }
+
+    .i-stem,
+    .i-accent {
+        display: inline-block;
+    }
+
+    .i-stem {
+        clip-path: inset(36% 0 0 0);
+    }
+
+    .i-accent {
+        position: absolute;
+        inset: 0;
+        clip-path: inset(0 0 64% 0);
+        animation: accent-drop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        animation-delay: 0.6s;
+    }
+
+    @keyframes accent-drop {
+        0% {
+            opacity: 0;
+            transform: translateY(8px);
+            color: var(--color-primary);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            color: inherit;
+        }
+    }
+</style>

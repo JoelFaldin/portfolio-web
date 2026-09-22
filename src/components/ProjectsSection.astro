@@ -1,63 +1,66 @@
 ---
-import { db, Projects } from "astro:db";
-
-import type { languageList } from "@/i18n/ui";
-import { useTranslations } from "@/i18n/utils";
-import Github from "./icons/Github.astro";
-import Open from "./icons/Open.astro";
-
-const projects = await db.select().from(Projects);
-
-const currentLang = Astro.currentLocale || 'en';
-const translateLabels = useTranslations(currentLang as keyof typeof languageList);
+import ArrowUpRight from "./icons/ArrowUpRight.astro";
+import SectionLabel from "./SectionLabel.astro";
+import { projects } from "../lib/projects";
 ---
-<section id="projects" class="py-32 bg-[#0a0a14]">
-    <div class="container px-4 mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-white font-serif text-center">
-            {translateLabels("projects.h2", {
-                projects: <span class="text-[#e6c478]">{currentLang === 'en' ? 'Projects' : 'Proyectos'}</span>
-            })}
-        </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<section id="projects" class="border-t border-border/60 py-24">
+    <div class="container mx-auto px-4">
+        <SectionLabel
+            section="ls ~/projects"
+            title="Things I build across the stack"
+        />
+
+        <p class="mt-4 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
+            A mix of web, backend, and systems work - projects where making
+            something useful and understanding how it works go hand in hand.
+        </p>
+
+        <div class="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-2">
             {projects.map((project) => (
-                <div class="bg-[#0f0f1a] border-none overflow-hidden group">
-                    <div class="relative overflow-hidden">
-                        <div class="h-56 overflow-hidden">
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                            />
+                <a
+                    href={project.repo}
+                    class="group flex flex-col gap-4 bg-card p-6 transition-colors hover:bg-secondary/50"
+                >
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 font-mono">
+                            <span class="text-primary">./</span>
+                            <span class="text-lg font-semibold text-foreground">
+                                {project.name}
+                            </span>
                         </div>
-                        <div class="absolute top-3 left-3 bg-[#0a0a14]/80 backdrop-blur-sm text-[#e6c478] text-sm font-medium py-1 px-3 rounded-full">
-                            {project.category}
-                        </div>
+                        <ArrowUpRight classProp="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
                     </div>
-                    <section class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-white">{project.title}</h3>
-                        </div>
-                        <p class="text-zinc-400 mb-6 line-clamp-2">{currentLang === 'en' ? project.enDescription : project.esDescription}</p>
 
-                        <div class="flex flex-row gap-x-2">
-                            {/* <a
-                                class="w-full bg-[#e6c478] hover:bg-[#d4b366] text-[#0a0a14] px-6 py-2 rounded-md flex flex-row items-center justify-center"
-                                href=""
-                            >
-                                <Open class="w-4 h-4 mr-2" />
-                                Details
-                            </a> */}
-                            <a
-                                class="w-full border-[#e6c478] text-[#e6c478] hover:bg-[#e6c478]/10 text-lg px-6 py-2 rounded-md flex flex-row items-center justify-center"
-                                href={project.repo}
-                                target="_blank"
-                            >
-                                <Github class="w-4 h-4 mr-2" />
-                                {translateLabels("projects.button")}
-                            </a>
-                        </div>
-                    </section>
-                </div>
+                    <div class="border border-primary/60 w-fit mx-auto">
+                        <img
+                            src={project.image}
+                            class="block max-w-full h-auto"
+                        />
+                    </div>
+
+                    <p class="text-pretty leading-relaxed text-muted-foreground">
+                        {project.desc}
+                    </p>
+
+                    <div class="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
+                        <span class="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground">
+                            <span class="h-1.5 w-1.5 rounded-full bg-primary" />
+                            {project.status}
+                        </span>
+                        <span class="font-mono text-xs text-muted-foreground">
+                            {project.category}
+                        </span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        {project.stack.map((tech) => (
+                            <span class="rounded border border-border bg-background px-2 py-0.5 font-mono text-xs text-muted-foreground">
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                </a>
             ))}
         </div>
     </div>

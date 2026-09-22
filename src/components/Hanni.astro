@@ -1,0 +1,28 @@
+---
+const pics = [
+    "https://i.pinimg.com/1200x/d6/cb/bd/d6cbbd7d406c8c57b1bd520cb159f3a6.jpg",
+    "https://i.pinimg.com/736x/00/8b/ee/008bee9d2d440159013d2b7b78923f90.jpg",
+    "https://i.pinimg.com/736x/2a/12/59/2a125988e9bfe906312e0a03df03691a.jpg",
+    "https://i.pinimg.com/736x/f9/3e/b5/f93eb5a5427f54b8b6a6b5d3b4b0b480.jpg",
+    "https://i.pinimg.com/1200x/77/58/68/775868148f34397a4934e504cc73a5b8.jpg",
+    "https://i.pinimg.com/736x/f4/02/31/f40231c3860d48b410a935ee60b25d1e.jpg",
+    "https://i.pinimg.com/736x/01/fe/a6/01fea6e39e7e86fcba46051ba6000f17.jpg",
+];
+---
+
+<section class="flex flex-col items-center my-12">
+    <h1 class="text-4xl text-primary font-bold">Hanni NJ 👖</h1>
+    <p class="mt-3 text-sm text-muted-foreground">
+        No pics here are of my authory. Please go support original artists, and
+        Hanni herself.
+    </p>
+
+    <div class="mt-12 flex flex-col max-w-lg gap-2">
+        {pics.map((pic) => (
+            <img
+                src={pic}
+                class="block max-w-full h-auto border border-primary hover:border-primary/60"
+            />
+        ))}
+    </div>
+</section>
